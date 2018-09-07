@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/diego/Documents/Facultad/AED 3/Labor/TP1/codigo/main.cpp
+iostream
+-
+vector
+-
+fstream
+-
+cmath
+-
+chrono
+-
+tuple
+-
+bitset
+-
+limits
+-
+string
+-
+

@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.22)  4 SEP 2018 10:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.22)  4 SEP 2018 10:16
 entering extended mode
-**./ejemplo_tesis.tex
-(ejemplo_tesis.tex
+**./caratula_tp1.tex
+(caratula_tp1.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -383,118 +383,45 @@ Cargando package 'caratula' v0.3 (2005/08/09)
 \intlist=\toks17
 )
 
-! LaTeX Error: Unknown option `graf' for package `caratula'.
+! LaTeX Error: Unknown option `conEntregas' for package `caratula'.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6 
-    
-The option `graf' was not declared in package `caratula', perhaps you
+l.6 \begin
+          {document}
+The option `conEntregas' was not declared in package `caratula', perhaps you
 misspelled its name. Try typing  <return>  to proceed.
 
 
-! LaTeX Error: Unknown option `intHoriz' for package `caratula'.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 
-    
-The option `intHoriz' was not declared in package `caratula', perhaps you
-misspelled its name. Try typing  <return>  to proceed.
-
-
-! LaTeX Error: Unknown option `sinLU' for package `caratula'.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 
-    
-The option `sinLU' was not declared in package `caratula', perhaps you
-misspelled its name. Try typing  <return>  to proceed.
-
-
-! LaTeX Error: Unknown option `showDirectores' for package `caratula'.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 
-    
-The option `showDirectores' was not declared in package `caratula', perhaps you
-
-misspelled its name. Try typing  <return>  to proceed.
-
-! Undefined control sequence.
-l.11 \director
-              {Director1, Nombre}{director1@dc.uba.ar}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.11 \director{D
-                irector1, Nombre}{director1@dc.uba.ar}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Undefined control sequence.
-l.12 \director
-              {Director2, Nombre}{director2@dc.uba.ar}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (8.27846pt too wide) in paragraph at lines 11--13
-[]\OT1/cmr/m/n/10 Director1, Nom-bre-di-rec-tor1@dc.uba.ar Di-rec-tor2, Nom-bre
--di-rec-tor2@dc.uba.ar 
- []
-
-
-("C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\Algo3_TP1\caratula\build\ej
-emplo_tesis.aux"
+("C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\Algo3_TP1\caratula\build\ca
+ratula_tp1.aux"
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 )
-\openout1 = `ejemplo_tesis.aux'.
+\openout1 = `caratula_tp1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Info: Redefining \. on input line 19.
-LaTeX Info: Redefining \% on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
 
 ! Undefined control sequence.
 \maketitlegraf ...le }\fi \hfill \includegraphics 
                                                   {imagenes/logodc.pdf} \par...
-l.21   \maketitle
-                 
+l.22 \maketitle
+               
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -502,19 +429,19 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 21.
+(Font)              <7> on input line 22.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 21.
+(Font)              <5> on input line 22.
 ! Undefined control sequence.
 \maketitlegraf ...50\textwidth } \includegraphics 
                                                   [width=\textwidth ]{imagen...
-l.21   \maketitle
-                 
+l.22 \maketitle
+               
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -524,8 +451,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    ]
-l.21   \maketitle
-                 
+l.22 \maketitle
+               
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -533,8 +460,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.21   \maketitle
-                 
+l.22 \maketitle
+               
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -545,32 +472,33 @@ two letters. (See Chapter 27 of The TeXbook.)
 [1
 
 {C:/Users/diego/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-("C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\Algo3_TP1\caratula\build\ej
-emplo_tesis.aux"
+("C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\Algo3_TP1\caratula\build\ca
+ratula_tp1.aux"
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 1482 strings out of 493305
- 18911 string characters out of 3129802
+ 1483 strings out of 493305
+ 18916 string characters out of 3129802
  82339 words of memory out of 3000000
- 5064 multiletter control sequences out of 15000+200000
- 5320 words of font info for 20 fonts, out of 3000000 for 9000
+ 5065 multiletter control sequences out of 15000+200000
+ 5627 words of font info for 21 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,7n,30p,190b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,7n,30p,234b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/diego/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmbx12.pfb><C:/Users/diego/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb><C:/Users/diego/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/diego/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/diego/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/diego
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
-<C:/Users/diego/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmtt10.pfb>
+s/cm/cmbx10.pfb><C:/Users/diego/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmbx12.pfb><C:/Users/diego/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/diego/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/diego/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/diego
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C
+:/Users/diego/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmssbx10.pfb><C:/Users/diego/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmtt10.pfb>
 Output written on "C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\Algo3_TP1\
-caratula\build\ejemplo_tesis.pdf" (2 pages, 86282 bytes).
+caratula\build\caratula_tp1.pdf" (2 pages, 98824 bytes).
 PDF statistics:
- 37 PDF objects out of 1000 (max. 8388607)
+ 41 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
