@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include <fstream>
 #include <cmath>
 #include <chrono>
@@ -7,8 +8,7 @@
 #include <bitset>
 #include <limits>
 #include <string>
-#define VALOROBJETIVO 2
-
+#define VALOROBJETIVO 0
 using namespace std;
 
 typedef std::vector<vector<bool> > matriz;
@@ -21,18 +21,26 @@ void generarPartes(matriz &v, int &pasos);
 void inicializacionDeAuxiliares(matriz &partes, vector<int> &conj);
 int buscarValorObjetivo_BF( vector<int> &conj,int& valorObjetivo, long&,vector<pair<int,int> > &partesAct, matriz &partes);
 int buscarValorObjetivo_BT(matriz &partes,int& valorObjetivo, vector<int> &conj, long &cantidadPasos);
-int buscarValorObjetivoPD_bottom_up(int &valorObjetivo, vector<int> &conj, long &cantidadPasos);
-int buscarValorObjetivoPD_top_down(vector<int>, int, long &, int);
+
 void actualizarPartes(matriz &partes, vector<pair<int,int> > &,vector<int> &conj);
 void cargarDatosEntrada(vector<int> &conj, int& valorObjetivo, int& cantidadElementos);
-int aux_top_down(vector<int> conjActual, int valorObjetivo, long &cantPasos, int tamInicial, vector<vector<int> > & memoria, int desde);
+
+
+
+
+int back2(vector<int> c, int valorObjetivo, long &p);
+
 
 void powerSet(string set, vector<string >& powerset);
 void subsetSums(vector<int>, int n);
 
+int aux_back2(vector<int>& c, int valorObjetivo, long &p, int& sol,int, int desde);
+int buscarValorObjetivoPD_bottom_up(int &valorObjetivo, vector<int> &conj, long &cantidadPasos);
+int buscarValorObjetivoPD_top_down(vector<int>, int, long &);
+int aux_top_down(vector<int> conjActual, int valorObjetivo, long &cantPasos, int tamInicial, vector<vector<int> > & memoria, int desde);
 int bruteforce(vector<int>& c, int valorObjetivo,long &pasos);
 int backtracking(vector<int> &c, int valorObjetivo, long &pasos);
-void auxBacktracking(vector<int>& c, vector<int> partes_i, int desde, int valorObjetivo, int& sol, long &pasos);
+void auxBacktracking(vector<int>& c, vector<int> partes_i, int desde, int valorObjetivo, int& sol, long &pasos, int sumaActual, int cantElem);
 int sumaConj(vector<int>& c, int valorObjetivo);
 vector<int> agregar(vector<int> a, int b);
 
@@ -40,12 +48,11 @@ int main(int argc, char* argv[]) {
     using namespace chrono;
     int valorObjetivo = VALOROBJETIVO;
     vector<int> arr;
-    int tam = 20;
+    int tam = 15;
     arr.resize(tam);
     for (int i = 0; i < tam; i++) {
-        if(i!= 1) arr[i]=3+1;
+        arr[i] = i+1;
     }
-    arr[1]=5;
     int sol;
     long pasosBF=0;
 
@@ -63,6 +70,14 @@ int main(int argc, char* argv[]) {
     diff = duration_cast<duration<double, std::milli> >(end - start);
     cout <<"sol = " <<sol<<" y TARDO: (ms,pasos)"<< diff.count()<<","<<pasosBT<<endl;
 
+/*
+    pasosBT=0;
+    start = std::chrono::steady_clock::now();
+    sol = back2(arr,valorObjetivo,pasosBT);
+    end = std::chrono::steady_clock::now();
+    diff = duration_cast<duration<double, std::milli> >(end - start);
+    cout <<"sol back2= " <<sol<<" y TARDO: (ms,pasos)"<< diff.count()<<","<<pasosBT<<endl;
+*/
 
     matriz partes;//aca voy a obtener mi pre-cjto de partes, es decir, la combinacion binaria de cada subconjunto de conj
     vector<int> conj;//este serian mis elementos;
@@ -109,7 +124,7 @@ int main(int argc, char* argv[]) {
     cout << "CORRO ALGORITMO DED PROGRAMACION DINAMICA, TOP DOWN"<<endl;
     long pasosPD_down=0;
     start = std::chrono::steady_clock::now();
-    int cardResultado3_down = buscarValorObjetivoPD_top_down(conj,valorASumar, pasosPD_down, conj.size());
+    int cardResultado3_down = buscarValorObjetivoPD_top_down(conj,valorASumar, pasosPD_down);
     end = std::chrono::steady_clock::now();
     diff = duration_cast<duration<double, std::milli> >(end - start);
     cout << ((cardResultado3_down!=-1)? ("El conjunto que suma eso de menos elementos tiene: " ) : ("No hay conjunto:")) <<cardResultado3_down<<endl;
@@ -413,50 +428,42 @@ int sumaConj(vector<int>& conj){
     return s;
 }
 
-void auxBacktracking(vector<int>& c, vector<int> partes_i, int desde, int valorObjetivo, int& sol, long &pasos){
-    /*cout <<"Llega el: "<<endl<<"[";
-    for (int j = 0; j < partes_i.size(); ++j) {
-        cout <<partes_i[j]<<",";
-    }
-    cout<<"]" <<endl;*/
+void auxBacktracking(vector<int>& c, vector<int> partes_i, int desde, int valorObjetivo, int& sol, long &pasos,int sumaActual, int cantElem){
 
-    if(sol==-1 || (sol != -1 && partes_i.size() < sol)){
-        if(partes_i.size() > 0) {
-            //cout <<"temp tiene elementos"<<endl;
-            if(sumaConj(partes_i) == valorObjetivo) {
+    if(sol==-1 || (sol != -1 && cantElem < sol)){
+        if(cantElem > 0) {
+            if(sumaActual == valorObjetivo) {
                 if(sol==-1){
-                    sol = partes_i.size();
-                    //cout << "Primera sol: "<<sol<<endl;
-
+                    sol = cantElem;
                 }
                 else {
-                    if(sol > partes_i.size()) {
-                        sol = partes_i.size();
-                        //cout << " SOL MEJOR: " <<sol<<endl;
+                    if(sol > cantElem) {
+                        sol = cantElem;
                     }
-
                 }
-
             }
         }
     }
-    pasos++;
+    //pasos += c.size()-desde;
     long pasosInt= 0;
-    //if(partes_i.size() == 0) partes_i.push_back(c[0]); //linea agregada para el mejor caso
     for (int i = desde; i < c.size(); ++i) {
-        pasosInt++;
-        //if(sumaConj(partes_i) < valorObjetivo) {//cota por fact
-        if((sumaConj(partes_i) < valorObjetivo) && (sol==-1 || sol!=-1 && sol < partes_i.size())) {//cota por fact y optº
-            partes_i.push_back(c[i]);
+        pasos++;
+        //cout <<"i: " <<i <<"desde: "<<desde<<endl;
+        if(sumaActual < valorObjetivo && (sol==-1 || sol!=-1 && sol > cantElem)) {//cota por fact y optº
+
+        //if((sumaConj(partes_i) < valorObjetivo) && (sol==-1 || sol!=-1 && sol > partes_i.size())) {//cota por fact y optº
+            //partes_i.push_back(c[i]);
             desde++;
-            //cout << "meto a partes: "<<c[i]<<endl;
-            auxBacktracking(c,partes_i,desde,valorObjetivo,sol,pasos);
-            //cout << "saco el : "<<partes_i[partes_i.size()-1]<<endl;
-            partes_i.pop_back();
+            sumaActual +=c[i];
+            cantElem++;
+            auxBacktracking(c,partes_i,desde,valorObjetivo,sol,pasos,sumaActual, cantElem);
+            cantElem--;
+            sumaActual -=  c[i];
+            //partes_i.pop_back();
         }
 
     }
-    pasos+=pasosInt;
+    //pasos+=pasosInt;
 
 }
 
@@ -469,8 +476,9 @@ vector<int> agregar(vector<int> a, int b) {
 int backtracking(vector<int>& c, int valorObjetivo,long &pasos) {
     vector<int> partes_i;
     int sol = -1;
-    auxBacktracking(c,partes_i,0,valorObjetivo,sol,pasos);
-    if(sol==-1) {
+    pasos=0;
+    auxBacktracking(c,partes_i,0,valorObjetivo,sol,pasos,0,0);
+    if(sol==-1 || sol >= c.size()) {
         return -1;
     }else{
         return sol;
@@ -479,33 +487,21 @@ int backtracking(vector<int>& c, int valorObjetivo,long &pasos) {
 }
 
 int bruteforce(vector<int>& c, int valorObjetivo,long& pasos){
-    // There are totoal 2^n subsets
     int n = c.size();
     long long total = 1<<n;
     int sol=-1;
-    // Consider all numbers from 0 to 2^n - 1
-    for (long long i=0; i<total; i++)
-    {
+    for (long long i=0; i<total; i++) {
         int card=0;
         long long sum = 0;
         long long aux =1;
-        // Consider binary reprsentation of
-        // current i to decide which elements
-        // to pick.
         pasos += n;
         for (int j=0; j<n; j++){
-            if(j==0) aux = 1;
-            if(j!= 0) {
-                aux*=2;
-            }
-            if (i & aux) {
+            if (i & 1<<j) {
                 card++;
                 sum += c[j];
             }
 
         }
-
-        // Print sum of picked elements.
         if(sum == valorObjetivo) {
             if(sol==-1){
                 sol = card;
@@ -514,10 +510,7 @@ int bruteforce(vector<int>& c, int valorObjetivo,long& pasos){
                     sol = card;
                 }
             }
-
         }
-
-        ///cout << sum << " ";
     }
     return sol;
 }
@@ -562,6 +555,12 @@ int buscarValorObjetivoPD_bottom_up(int &valorObjetivo, vector<int> &conj, long 
 
     //sol vieja
     int sol = -1;
+    if(conj.size() == 0){
+        if(valorObjetivo == 0) return 0;
+        return conj.size();
+    }else if(valorObjetivo == 0) {
+        return 0;
+    }
     cantidadPasos = 1;
     vector<vector<int> > soluciones;
     soluciones.resize(conj.size()+1);
@@ -596,14 +595,20 @@ int buscarValorObjetivoPD_bottom_up(int &valorObjetivo, vector<int> &conj, long 
 
 }
 
-int buscarValorObjetivoPD_top_down(vector<int> conj, int valorObjetivo, long &cantPasos, int tamInicial) {
-    //cout << "entro a aux pd, conj actual tam: "<< conjActual.size()<< " y tam inicialm es: " << tamInicial << " y el valor objetivo actual es: " << valorObjetivo<<endl;
-    cantPasos++;
-    vector<vector<int> > soluciones;
+int buscarValorObjetivoPD_top_down(vector<int> conj, int valorObjetivo, long &cantPasos) {
+    if(conj.size() == 0){
+        if(valorObjetivo == 0) return 0;
+        return conj.size();
+    }else if(valorObjetivo == 0) {
+        return 0;
+    }
+    vector<vector<int> > soluciones; //n x V
     soluciones.resize(conj.size());
+
     for (int i = 0; i < conj.size(); ++i) {
         soluciones[i].resize(valorObjetivo+1);
         for (int j = 0; j < soluciones[i].size(); ++j) {
+            cantPasos++;
             soluciones[i][j]=-1;
             if(j==i && i == 0) soluciones[i][j]=0;
         }
@@ -616,8 +621,6 @@ int buscarValorObjetivoPD_top_down(vector<int> conj, int valorObjetivo, long &ca
 
 int aux_top_down(vector<int> conjActual, int valorObjetivo, long &cantPasos, int tamInicial, vector<vector<int> > & memoria, int desde) {
     cantPasos++;
-    //cout << "MUESTRO MAATRIZ"<<endl;
-    //mostrarPartes(memoria);
     if(desde < 0) {
         if(valorObjetivo==0) {
             return 0;
@@ -656,3 +659,71 @@ void cargarDatosEntrada(vector<int> &conj, int& valorObjetivo, int& cantidadElem
 
 
 
+int back2(vector<int> c, int valorObjetivo,long& p){
+    int sol = -1;
+    int s = aux_back2(c,valorObjetivo,p,sol,sumaConj(c),0);
+    //sort(begin(c),end(c)); //ordenamos en ascendente, O(n * logn)
+    return (s>=c.size())? -1 : s;
+}
+
+int aux_back2(vector<int>& c, int valorObjetivo, long &p, int& sol,int v, int desde){
+    int tamInicial = c.size();
+    /*if(valorObjetivo == 0) {
+        return 1;
+    }else if(valorObjetivo<0 || c.size() == 0) {
+        return tamInicial;
+    }*/
+
+
+    int sumaElemRest = 0;
+    for (int i = desde+1; i < tamInicial; ++i) {
+        sumaElemRest += c[i];
+    }
+    int vAct = c[desde], sumaC = sumaConj(c);
+    if(desde >= tamInicial || valorObjetivo < 0 || valorObjetivo > sumaElemRest){
+        return tamInicial;
+    }else if(valorObjetivo > sumaC/2){
+        valorObjetivo = sumaC-valorObjetivo;
+    }
+    if(sumaElemRest == valorObjetivo || vAct == valorObjetivo || valorObjetivo == 0) {
+        return tamInicial-1-desde;
+    }else if(aux_back2(c,valorObjetivo - vAct,p,sol,sumaElemRest-vAct,desde+1)) {
+        return aux_back2(c,valorObjetivo - vAct,p,sol,sumaElemRest-vAct,desde+1);
+    }else return(aux_back2(c,valorObjetivo - vAct,p,sol,sumaElemRest-vAct,desde+1));
+
+   /* if(desde >= tamInicial) return tamInicial;
+    p++;
+    int x = c[desde];
+    int rta1,rta2;
+    if(valorObjetivo - x < 0) {
+        return tamInicial;
+    } else if(valorObjetivo-x==0) {
+        return 1;
+    }else {
+        if(sol != -1 && sol <= p) {
+            return tamInicial;
+        }
+        rta1 = 1 + aux_back2(c, valorObjetivo-x, p,sol,desde+1);
+        rta2 = aux_back2(c,valorObjetivo,p,sol,desde+1);
+        sol = min(rta1,rta2);
+    }*/
+    /*
+    rta1 = 1 + aux_back2(c, valorObjetivo-x, p,sol,desde+1);
+    //if(rta1 < tamInicial)
+    rta2 = aux_back2(c,valorObjetivo,p,sol,desde+1);
+    //else
+        //return tamInicial;
+    if(sol == -1) {
+        sol = min(rta1,rta2);
+    } else{
+        if(sol > rta1 ) {
+            sol = rta1;
+        }else if(sol > rta2) {
+            sol = rta2;
+        }else {
+
+        }
+    }
+*/
+    return (sol >= tamInicial)? -1:sol;
+}

@@ -6,23 +6,17 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/diego/Documents/Facultad/AED 3/Labor/TP1/codigo/main.cpp
+C:/Users/diego/Documents/Facultad/AED 3/Labor/TP1/codigo/tp1.cpp
 iostream
 -
 vector
+-
+algorithm
 -
 fstream
 -
 cmath
 -
 chrono
--
-tuple
--
-bitset
--
-limits
--
-string
 -
 

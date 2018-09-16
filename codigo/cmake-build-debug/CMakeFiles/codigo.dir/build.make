@@ -56,38 +56,38 @@ include CMakeFiles/codigo.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/codigo.dir/flags.make
 
-CMakeFiles/codigo.dir/main.cpp.obj: CMakeFiles/codigo.dir/flags.make
-CMakeFiles/codigo.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\codigo\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/codigo.dir/main.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\codigo.dir\main.cpp.obj -c "C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\codigo\main.cpp"
+CMakeFiles/codigo.dir/tp1.cpp.obj: CMakeFiles/codigo.dir/flags.make
+CMakeFiles/codigo.dir/tp1.cpp.obj: ../tp1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\codigo\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/codigo.dir/tp1.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\codigo.dir\tp1.cpp.obj -c "C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\codigo\tp1.cpp"
 
-CMakeFiles/codigo.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/codigo.dir/main.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\codigo\main.cpp" > CMakeFiles\codigo.dir\main.cpp.i
+CMakeFiles/codigo.dir/tp1.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/codigo.dir/tp1.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\codigo\tp1.cpp" > CMakeFiles\codigo.dir\tp1.cpp.i
 
-CMakeFiles/codigo.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/codigo.dir/main.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\codigo\main.cpp" -o CMakeFiles\codigo.dir\main.cpp.s
+CMakeFiles/codigo.dir/tp1.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/codigo.dir/tp1.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\codigo\tp1.cpp" -o CMakeFiles\codigo.dir\tp1.cpp.s
 
-CMakeFiles/codigo.dir/main.cpp.obj.requires:
+CMakeFiles/codigo.dir/tp1.cpp.obj.requires:
 
-.PHONY : CMakeFiles/codigo.dir/main.cpp.obj.requires
+.PHONY : CMakeFiles/codigo.dir/tp1.cpp.obj.requires
 
-CMakeFiles/codigo.dir/main.cpp.obj.provides: CMakeFiles/codigo.dir/main.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\codigo.dir\build.make CMakeFiles/codigo.dir/main.cpp.obj.provides.build
-.PHONY : CMakeFiles/codigo.dir/main.cpp.obj.provides
+CMakeFiles/codigo.dir/tp1.cpp.obj.provides: CMakeFiles/codigo.dir/tp1.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\codigo.dir\build.make CMakeFiles/codigo.dir/tp1.cpp.obj.provides.build
+.PHONY : CMakeFiles/codigo.dir/tp1.cpp.obj.provides
 
-CMakeFiles/codigo.dir/main.cpp.obj.provides.build: CMakeFiles/codigo.dir/main.cpp.obj
+CMakeFiles/codigo.dir/tp1.cpp.obj.provides.build: CMakeFiles/codigo.dir/tp1.cpp.obj
 
 
 # Object files for target codigo
 codigo_OBJECTS = \
-"CMakeFiles/codigo.dir/main.cpp.obj"
+"CMakeFiles/codigo.dir/tp1.cpp.obj"
 
 # External object files for target codigo
 codigo_EXTERNAL_OBJECTS =
 
-codigo.exe: CMakeFiles/codigo.dir/main.cpp.obj
+codigo.exe: CMakeFiles/codigo.dir/tp1.cpp.obj
 codigo.exe: CMakeFiles/codigo.dir/build.make
 codigo.exe: CMakeFiles/codigo.dir/linklibs.rsp
 codigo.exe: CMakeFiles/codigo.dir/objects1.rsp
@@ -100,7 +100,7 @@ CMakeFiles/codigo.dir/build: codigo.exe
 
 .PHONY : CMakeFiles/codigo.dir/build
 
-CMakeFiles/codigo.dir/requires: CMakeFiles/codigo.dir/main.cpp.obj.requires
+CMakeFiles/codigo.dir/requires: CMakeFiles/codigo.dir/tp1.cpp.obj.requires
 
 .PHONY : CMakeFiles/codigo.dir/requires
 
