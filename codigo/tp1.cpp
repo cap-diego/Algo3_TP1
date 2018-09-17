@@ -53,7 +53,7 @@ int main(int argc, char** argv) {
         auto tpd1 = medir_tiempo(cantRep, buscarValorObjetivoPD_top_down(c,valorObjetivo,spd1,ppd1););
         auto tpd2 = medir_tiempo(cantRep, buscarValorObjetivoPD_bottom_up(valorObjetivo,c,spd2,ppd2););
         //cout <<"resultados: "<<sbf<<" "<<sbt<<" "<<spd1<<" "<<spd2<<endl;
-        cout<< "SOLUCION: "<<sbf<<endl;
+        cout<<sbf<<endl;
         outFile<<cantElem<<","<<tbf<< ","<<tbt<<","<<tpd1<<","<<tpd2<<","<<spd1<<","<<valorObjetivo<<","<<pbf<<","<<pbt<<","<<ppd1<<","<<ppd2<<endl;
     }else if(strcmp(argv[1], "")!=0){
         inFile.open(argv[1]);
@@ -64,11 +64,11 @@ int main(int argc, char** argv) {
             c.clear();
             inFile >>cantElem >> valorObjetivo;
             if(!inFile.eof()){
-              cout <<cantElem<<" "<<valorObjetivo<<endl;
+              //cout <<cantElem<<" "<<valorObjetivo<<endl;
               c.resize(cantElem);
               for (int j = 0; j < cantElem; ++j) {
                   inFile >> c[j];
-                  cout << c[j]<< " ";
+                  //cout << c[j]<< " ";
               }
               int sbf,sbt,spd1,spd2;
               long long int pbf=0,pbt=0,ppd1=0,ppd2=0;
@@ -76,10 +76,10 @@ int main(int argc, char** argv) {
               auto tbt = medir_tiempo(cantRep, backtracking(c,valorObjetivo,sbt,pbt););
               auto tpd1 = medir_tiempo(cantRep, buscarValorObjetivoPD_top_down(c,valorObjetivo,spd1,ppd1););
               auto tpd2 = medir_tiempo(cantRep, buscarValorObjetivoPD_bottom_up(valorObjetivo,c,spd2,ppd2););
-              cout <<"SOLUCION: "<<sbf<<endl;
+              cout<<sbf<<endl;
               //cout <<"resultados: "<<sbf<<" "<<sbt<<" "<<spd1<<" "<<spd2<<endl;
               outFile<<cantElem<<","<<tbf<< ","<<tbt<<","<<tpd1<<","<<tpd2<<","<<spd1<<","<<valorObjetivo<<","<<pbf<<","<<pbt<<","<<ppd1<<","<<ppd2<<endl;
-              cout<<spd1<<"\t"<<tbf<<"\t"<<tbt<<"\t"<<tpd1<<"\t"<<tpd2<<endl;
+              //cout<<spd1<<"\t"<<tbf<<"\t"<<tbt<<"\t"<<tpd1<<"\t"<<tpd2<<endl;
             }
 
         }
