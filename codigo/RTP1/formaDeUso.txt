@@ -9,10 +9,11 @@ g++ tp1.cpp -o nombre_ejecutable
 ./nombre_ejecutable "nombre_archivo.txt"
 donde nombre_archivo es un documento de tipo txt en la misma ruta que tp1.cpp y que respeta el orden los numeros como lo especificado en el tp.
 
-Si se ejecuta desde clion, modificar en el codigo poniendo el nombre del archivo que queremos leer en inFile.open("aca")
+Si se ejecuta desde clion y se quiere leer desde un txt, modificar en el codigo poniendo el nombre del archivo que queremos leer en nombreIn.
+Si se ejecuta desde clion y se quiere ingresar los datos por consola, una vez compilado y ejecutado, escribir en la consola de clion segun el orden establecido en el tp para las entradas.
 
 
 
-Despues de resolver los problemas el programa devuelve la solucion y un outarch.csv con la información importante
+Despues de resolver los problemas el programa devuelve la solucion y un OUT.csv con la información importante
 
  
