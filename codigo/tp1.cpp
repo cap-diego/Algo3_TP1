@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <fstream>
 #include <unistd.h>
+#include <string.h>
 #include <cmath>
 #include <chrono>
 using namespace std;
@@ -32,34 +33,36 @@ int main(int argc, char** argv) {
 
     using namespace chrono;
     ofstream outFile;
+    outFile.open("outarch.csv");
     ifstream inFile;
     vector<int> c;
     long long int valorObjetivo, cantElem;
-    int cantRep = 1;
+    int cantRep = 4;
     ////INICIO CARGA DATOS
-    string nombreIn, nombreOut;
     //cout << argv[1];
-    if(argc != 1 ) { //significa que la entrada es por teclado (lo negue para probar cosas)
+    if(argc == 1 ) {
+        outFile<<"TAM"<<","<<"T-FUERZA-BRUTA"<<","<<"T-BACKTRACKING"<<","<<"T-TOP-DOWN"<<","<<"T-BOTTOM-UP"<<","<< "SOLUCION"<<","<<"V"<<","<<"Pasos-BF"<<","<<"Pasos-BT"<<","<<"Pasos-TD"<<","<<"Pasos-BU"<<endl;
         cin >>cantElem>>valorObjetivo;
         c.resize(cantElem);
         for (int i = 0; i < cantElem; ++i) {
             cin >> c[i];
         }
-        int sbf,sbt,spd1,spd2;
+        int sbf=-1,sbt=-1,spd1=-1,spd2=-1;
         long long int pbf=0,pbt=0,ppd1=0,ppd2=0;
         auto tbf = medir_tiempo(cantRep,bruteforce(c,valorObjetivo,sbf,pbf););
         auto tbt = medir_tiempo(cantRep, backtracking(c,valorObjetivo,sbt,pbt););
-        cout <<"pasos bt: "<<pbt<<endl;
         auto tpd1 = medir_tiempo(cantRep, buscarValorObjetivoPD_top_down(c,valorObjetivo,spd1,ppd1););
         auto tpd2 = medir_tiempo(cantRep, buscarValorObjetivoPD_bottom_up(valorObjetivo,c,spd2,ppd2););
-        //cout <<"resultados: "<<sbf<<" "<<sbt<<" "<<spd1<<" "<<spd2<<endl;
-        cout<<sbf<<endl;
+        cout <<"resultados: "<<sbf<<" "<<sbt<<" "<<spd1<<" "<<spd2<<endl;
+        cout<<"tiempos: "<<tbf<<"\t"<<tbt<<"\t"<<tpd1<<"\t"<<tpd2<<endl;
         outFile<<cantElem<<","<<tbf<< ","<<tbt<<","<<tpd1<<","<<tpd2<<","<<spd1<<","<<valorObjetivo<<","<<pbf<<","<<pbt<<","<<ppd1<<","<<ppd2<<endl;
+        if(!(sbf == sbt && sbf == spd1 && spd2 == spd1)) {
+            cout<<"ERROR"<<endl;
+            return 1;
+        }
     }//else if(strcmp(argv[1], "")!=0){
-    else{
-        //inFile.open("../test/test_peor_caso_variando_ambos.txt",ios::in);
-        inFile.open("../casos_de_prueba/c12.txt",ios::in);
-        //outFile.open("../test/outwc_variando_ambos2.csv");//,ios_base::app);
+    else if(strcmp(argv[1],"")!=0){
+        inFile.open(argv[1]);
         if(!inFile.is_open()) return 1;
         outFile<<"TAM"<<","<<"T-FUERZA-BRUTA"<<","<<"T-BACKTRACKING"<<","<<"T-TOP-DOWN"<<","<<"T-BOTTOM-UP"<<","<< "SOLUCION"<<","<<"V"<<","<<"Pasos-BF"<<","<<"Pasos-BT"<<","<<"Pasos-TD"<<","<<"Pasos-BU"<<endl;
         while (!inFile.eof()){
@@ -79,14 +82,12 @@ int main(int argc, char** argv) {
               auto tbt = medir_tiempo(cantRep, backtracking(c,valorObjetivo,sbt,pbt););
                 auto tpd1 = medir_tiempo(cantRep, buscarValorObjetivoPD_top_down(c,valorObjetivo,spd1,ppd1););
                 auto tpd2 = medir_tiempo(cantRep, buscarValorObjetivoPD_bottom_up(valorObjetivo,c,spd2,ppd2););
-                cout <<"pasos bt: "<<pbt<<endl;
-                cout <<"pasos bf "<<pbf<<endl;
               cout <<"resultados: "<<sbf<<" "<<sbt<<" "<<spd1<<" "<<spd2<<endl;
               outFile<<cantElem<<","<<tbf<< ","<<tbt<<","<<tpd1<<","<<tpd2<<","<<spd1<<","<<valorObjetivo<<","<<pbf<<","<<pbt<<","<<ppd1<<","<<ppd2<<endl;
               cout<<"tiempos: "<<tbf<<"\t"<<tbt<<"\t"<<tpd1<<"\t"<<tpd2<<endl;
               if(!(sbf == sbt && sbf == spd1 && spd2 == spd1)) {
-                  //cout<<"ERRORRRRR"<<endl;
-                  //return 1;
+                  cout<<"ERROR"<<endl;
+                  return 1;
               }
             }
 
