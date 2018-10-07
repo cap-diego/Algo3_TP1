@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.22)  7 OCT 2018 17:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.22)  7 OCT 2018 18:39
 entering extended mode
 **./caratulaTP1.tex
 (caratulaTP1.tex
@@ -806,10 +806,7 @@ LaTeX Warning: Unused global option(s):
 
 
 ("C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\Algo3_TP1\caratula\build\ca
-ratulaTP1.aux"
-LaTeX Info: Redefining \. on input line 6.
-LaTeX Info: Redefining \% on input line 6.
-)
+ratulaTP1.aux")
 \openout1 = `caratulaTP1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
@@ -1120,7 +1117,7 @@ iego/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb>
 m/cmsy10.pfb><C:/Users/diego/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmsy7.pfb>
 Output written on "C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\Algo3_TP1\
-caratula\build\caratulaTP1.pdf" (12 pages, 945175 bytes).
+caratula\build\caratulaTP1.pdf" (12 pages, 945190 bytes).
 PDF statistics:
  602 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
