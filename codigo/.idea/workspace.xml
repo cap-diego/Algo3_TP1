@@ -26,7 +26,7 @@
       <file leaf-file-name="tp1.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tp1.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
+            <state relative-caret-position="-182">
               <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
               <folding />
             </state>
@@ -73,7 +73,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="width" value="960" />
     <option name="height" value="260" />
@@ -163,15 +163,15 @@
       <workItem from="1536699977283" duration="88750000" />
       <workItem from="1537146523384" duration="300000" />
       <workItem from="1538254058205" duration="12505000" />
-      <workItem from="1538686566791" duration="47276000" />
+      <workItem from="1538686566791" duration="47880000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="282842000" />
+    <option name="totallyTimeSpent" value="283446000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15520833" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -332,7 +332,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tp1.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
+        <state relative-caret-position="-182">
           <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
           <folding />
         </state>
