@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.22)  16 SEP 2018 20:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.22)  7 OCT 2018 17:47
 entering extended mode
 **./caratulaTP1.tex
 (caratulaTP1.tex
@@ -214,12 +214,21 @@ Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
 Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
-) ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.st
-y"
+)
+("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\enumitem\enumitem.
+sty"
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip45
+\enit@outerparindent=\dimen106
+\enit@toks=\toks25
+\enit@inbox=\box27
+\enitdp@description=\count96
+)
+("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks25
-\inpenc@posthook=\toks26
- ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def"
+\inpenc@prehook=\toks26
+\inpenc@posthook=\toks27
+("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
@@ -612,16 +621,16 @@ sty"
 Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
  ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count96
-\calc@Bcount=\count97
-\calc@Adimen=\dimen106
-\calc@Bdimen=\dimen107
-\calc@Askip=\skip45
-\calc@Bskip=\skip46
+\calc@Acount=\count97
+\calc@Bcount=\count98
+\calc@Adimen=\dimen107
+\calc@Bdimen=\dimen108
+\calc@Askip=\skip46
+\calc@Bskip=\skip47
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count98
-\calc@Cskip=\skip47
+\calc@Ccount=\count99
+\calc@Cskip=\skip48
 )
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.st
 y"
@@ -661,23 +670,23 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ))
-\AM@pagewidth=\dimen108
-\AM@pageheight=\dimen109
+\AM@pagewidth=\dimen109
+\AM@pageheight=\dimen110
 
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.
 def"
 File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
 )
-\AM@pagebox=\box27
-\AM@global@opts=\toks27
-\AM@toc@title=\toks28
-\c@AM@survey=\count99
-\AM@templatesizebox=\box28
+\AM@pagebox=\box28
+\AM@global@opts=\toks28
+\AM@toc@title=\toks29
+\c@AM@survey=\count100
+\AM@templatesizebox=\box29
 )
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.st
 y"
 Package: amsmath 2017/09/02 v2.17a AMS math features
-\@mathmargin=\skip48
+\@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
 
@@ -688,53 +697,53 @@ Package: amstext 2000/06/29 v2.01 AMS text
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty
 "
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks29
-\ex@=\dimen110
+\@emptytoks=\toks30
+\ex@=\dimen111
 ))
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty
 "
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen111
+\pmbraise@=\dimen112
 )
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty
 "
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count100
+\inf@bad=\count101
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count101
-\leftroot@=\count102
+\uproot@=\count102
+\leftroot@=\count103
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count103
-\DOTSCASE@=\count104
+\classnum@=\count104
+\DOTSCASE@=\count105
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box29
-\strutbox@=\box30
-\big@size=\dimen112
+\Mathstrutbox@=\box30
+\strutbox@=\box31
+\big@size=\dimen113
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count105
-\c@MaxMatrixCols=\count106
+\macc@depth=\count106
+\c@MaxMatrixCols=\count107
 \dotsspace@=\muskip10
-\c@parentequation=\count107
-\dspbrk@lvl=\count108
-\tag@help=\toks30
-\row@=\count109
-\column@=\count110
-\maxfields@=\count111
-\andhelp@=\toks31
-\eqnshift@=\dimen113
-\alignsep@=\dimen114
-\tagshift@=\dimen115
-\tagwidth@=\dimen116
-\totwidth@=\dimen117
-\lineht@=\dimen118
-\@envbody=\toks32
-\multlinegap=\skip49
-\multlinetaggap=\skip50
-\mathdisplay@stack=\toks33
+\c@parentequation=\count108
+\dspbrk@lvl=\count109
+\tag@help=\toks31
+\row@=\count110
+\column@=\count111
+\maxfields@=\count112
+\andhelp@=\toks32
+\eqnshift@=\dimen114
+\alignsep@=\dimen115
+\tagshift@=\dimen116
+\tagwidth@=\dimen117
+\totwidth@=\dimen118
+\lineht@=\dimen119
+\@envbody=\toks33
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks34
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
@@ -743,35 +752,35 @@ y"
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
 
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
-\PaperWidth=\dimen119
-\PaperHeight=\dimen120
+\PaperWidth=\dimen120
+\PaperHeight=\dimen121
 )
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ftnxtra\ftnxtra.st
 y"
 Package: ftnxtra 2013/04/04 footnote fixes for standard LaTeX
-\ftnxtra@p@ftn=\toks34
+\ftnxtra@p@ftn=\toks35
 )
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listings.
 sty"
-\lst@mode=\count112
-\lst@gtempboxa=\box31
-\lst@token=\toks35
-\lst@length=\count113
-\lst@currlwidth=\dimen121
-\lst@column=\count114
-\lst@pos=\count115
-\lst@lostspace=\dimen122
-\lst@width=\dimen123
-\lst@newlines=\count116
-\lst@lineno=\count117
-\lst@maxwidth=\dimen124
+\lst@mode=\count113
+\lst@gtempboxa=\box32
+\lst@token=\toks36
+\lst@length=\count114
+\lst@currlwidth=\dimen122
+\lst@column=\count115
+\lst@pos=\count116
+\lst@lostspace=\dimen123
+\lst@width=\dimen124
+\lst@newlines=\count117
+\lst@lineno=\count118
+\lst@maxwidth=\dimen125
 
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc.s
 ty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count118
-\lst@skipnumbers=\count119
-\lst@framebox=\box32
+\c@lstnumber=\count119
+\lst@skipnumbers=\count120
+\lst@framebox=\box33
 )
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listings.
 cfg"
@@ -793,7 +802,7 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
 
 LaTeX Warning: Unused global option(s):
-    [7pt].
+    [8pt].
 
 
 ("C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\Algo3_TP1\caratula\build\ca
@@ -803,40 +812,40 @@ LaTeX Info: Redefining \% on input line 6.
 )
 \openout1 = `caratulaTP1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 34.
 
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    ... okay on input line 34.
 
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count120
-\scratchdimen=\dimen125
-\scratchbox=\box33
-\nofMPsegments=\count121
-\nofMParguments=\count122
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count123
-\MPscratchDim=\dimen126
-\MPnumerator=\count124
-\makeMPintoPDFobject=\count125
-\everyMPtoPDFconversion=\toks37
+\scratchcounter=\count121
+\scratchdimen=\dimen126
+\scratchbox=\box34
+\nofMPsegments=\count122
+\nofMParguments=\count123
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count124
+\MPscratchDim=\dimen127
+\MPnumerator=\count125
+\makeMPintoPDFobject=\count126
+\everyMPtoPDFconversion=\toks38
 )
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
 base.sty"
@@ -888,9 +897,9 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Info: Redefining \. on input line 32.
-LaTeX Info: Redefining \% on input line 32.
-\AtBeginShipoutBox=\box34
+LaTeX Info: Redefining \. on input line 34.
+LaTeX Info: Redefining \% on input line 34.
+\AtBeginShipoutBox=\box35
 
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\pdflscape
 .sty"
@@ -906,22 +915,22 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 ))
-\c@lstlisting=\count126
+\c@lstlisting=\count127
 <logo_dc.jpg, id=1, 215.6055pt x 83.5923pt>
 File: logo_dc.jpg Graphic file (type jpg)
 <use logo_dc.jpg>
-Package pdftex.def Info: logo_dc.jpg  used on input line 43.
+Package pdftex.def Info: logo_dc.jpg  used on input line 45.
 (pdftex.def)             Requested size: 215.60497pt x 83.59207pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--43
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
 
  []
 
-LaTeX Font Info:    Try loading font information for U+lasy on input line 43.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 45.
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 43.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 45.
 
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -929,19 +938,19 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 <logo_uba.jpg, id=2, 225.4824pt x 231.7458pt>
 File: logo_uba.jpg Graphic file (type jpg)
 <use logo_uba.jpg>
-Package pdftex.def Info: logo_uba.jpg  used on input line 43.
+Package pdftex.def Info: logo_uba.jpg  used on input line 45.
 (pdftex.def)             Requested size: 225.48184pt x 231.74522pt.
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 43.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 45.
 
 ("C:\Users\diego\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 43--43
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
 
  []
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 43--43
+Overfull \hbox (15.0pt too wide) in paragraph at lines 45--45
 [][] 
  []
 
@@ -949,125 +958,171 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 43--43
 
 {C:/Users/diego/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./logo_dc.j
 pg> <./logo_uba.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 94--95
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
 [1]
-Underfull \hbox (badness 10000) in paragraph at lines 139--141
+Underfull \hbox (badness 10000) in paragraph at lines 141--143
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--179
+Underfull \hbox (badness 10000) in paragraph at lines 145--147
 
  []
 
-[2]
-<backtrack.pdf, id=39, 522.13747pt x 468.07652pt>
+<backtrack.pdf, id=31, 522.13747pt x 468.07652pt>
 File: backtrack.pdf Graphic file (type pdf)
 <use backtrack.pdf>
-Package pdftex.def Info: backtrack.pdf  used on input line 196.
+Package pdftex.def Info: backtrack.pdf  used on input line 164.
 (pdftex.def)             Requested size: 104.42563pt x 93.61363pt.
- [3 <./backtrack.pdf>] [4]
-<fibonacci_pd.png, id=50, 454.69875pt x 164.86594pt>
+[2]
+Warning: Indentation ends at level -1 in codebox on page 3.
+Warning: Indentation ends at level 1 in codebox on page 3.
+
+Overfull \hbox (8.1105pt too wide) in paragraph at lines 208--208
+| [] 
+ []
+
+[3 <./backtrack.pdf>]
+<fibonacci_pd.png, id=41, 454.69875pt x 164.86594pt>
 File: fibonacci_pd.png Graphic file (type png)
 <use fibonacci_pd.png>
-Package pdftex.def Info: fibonacci_pd.png  used on input line 339.
+Package pdftex.def Info: fibonacci_pd.png  used on input line 237.
 (pdftex.def)             Requested size: 181.87627pt x 65.94519pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 361--362
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
  []
 
-Warning: Indentation ends at level 1 in codebox on page 5.
-[5 <./fibonacci_pd.png>]
+[4 <./fibonacci_pd.png>] [5]
 Warning: Indentation ends at level -2 in codebox on page 6.
-[6] [7]
-<wc_bf_graph.png, id=62, 593.21625pt x 219.82124pt>
-File: wc_bf_graph.png Graphic file (type png)
-<use wc_bf_graph.png>
-Package pdftex.def Info: wc_bf_graph.png  used on input line 553.
-(pdftex.def)             Requested size: 237.28229pt x 87.92693pt.
-<wc_bu_vs_td_graph.png, id=64, 603.75563pt x 216.81pt>
-File: wc_bu_vs_td_graph.png Graphic file (type png)
-<use wc_bu_vs_td_graph.png>
-Package pdftex.def Info: wc_bu_vs_td_graph.png  used on input line 566.
-(pdftex.def)             Requested size: 241.49797pt x 86.72246pt.
-<wc2_bu_vs_td_graph.png, id=65, 618.81187pt x 216.81pt>
-File: wc2_bu_vs_td_graph.png Graphic file (type png)
-<use wc2_bu_vs_td_graph.png>
-Package pdftex.def Info: wc2_bu_vs_td_graph.png  used on input line 575.
-(pdftex.def)             Requested size: 247.52036pt x 86.72246pt.
- [8 <./wc_bf_graph.png> <./wc_bu_vs_td_graph.png>]
-<wc_bt_vs_bu_graph.png, id=71, 433.62pt x 289.08pt>
-File: wc_bt_vs_bu_graph.png Graphic file (type png)
-<use wc_bt_vs_bu_graph.png>
-Package pdftex.def Info: wc_bt_vs_bu_graph.png  used on input line 582.
-(pdftex.def)             Requested size: 173.44492pt x 115.62994pt.
-<heatmap_td_vs_bu.png, id=72, 619.56468pt x 222.8325pt>
-File: heatmap_td_vs_bu.png Graphic file (type png)
-<use heatmap_td_vs_bu.png>
-Package pdftex.def Info: heatmap_td_vs_bu.png  used on input line 590.
-(pdftex.def)             Requested size: 247.82147pt x 89.13141pt.
- [9 <./wc2_bu_vs_td_graph.png> <./wc_bt_vs_bu_graph.png> <./heatmap_td_vs_bu.pn
-g>]
-<comp_distr_normal.png, id=78, 1114.91531pt x 426.09187pt>
-File: comp_distr_normal.png Graphic file (type png)
-<use comp_distr_normal.png>
-Package pdftex.def Info: comp_distr_normal.png  used on input line 603.
-(pdftex.def)             Requested size: 445.95822pt x 170.43372pt.
- [10 <./comp_distr_normal.png>] [11]
+[6]
+<bf_var_v_plot.png, id=54, 616.55344pt x 221.32687pt>
+File: bf_var_v_plot.png Graphic file (type png)
+<use bf_var_v_plot.png>
+Package pdftex.def Info: bf_var_v_plot.png  used on input line 381.
+(pdftex.def)             Requested size: 431.58446pt x 154.92773pt.
+<bt_bf_var_v.png, id=56, 692.5875pt x 214.55156pt>
+File: bt_bf_var_v.png Graphic file (type png)
+<use bt_bf_var_v.png>
+Package pdftex.def Info: bt_bf_var_v.png  used on input line 385.
+(pdftex.def)             Requested size: 484.80794pt x 150.18506pt.
+
+Overfull \hbox (9.20198pt too wide) in paragraph at lines 385--386
+ [] 
+ []
+
+<btvsbf.png, id=57, 666.23906pt x 220.57407pt>
+File: btvsbf.png Graphic file (type png)
+<use btvsbf.png>
+Package pdftex.def Info: btvsbf.png  used on input line 390.
+(pdftex.def)             Requested size: 532.99197pt x 176.45947pt.
+
+Overfull \hbox (57.38602pt too wide) in paragraph at lines 390--391
+ [] 
+ []
+
+[7 <./bf_var_v_plot.png> <./bt_bf_var_v.png>]
+<tdvsbu_var_n.png, id=63, 608.2725pt x 222.07968pt>
+File: tdvsbu_var_n.png Graphic file (type png)
+<use tdvsbu_var_n.png>
+Package pdftex.def Info: tdvsbu_var_n.png  used on input line 399.
+(pdftex.def)             Requested size: 547.4402pt x 199.86986pt.
+
+Overfull \hbox (71.83424pt too wide) in paragraph at lines 399--400
+ [] 
+ []
+
+<tdvsbu_heatmap.png, id=64, 636.87938pt x 234.1247pt>
+File: tdvsbu_heatmap.png Graphic file (type png)
+<use tdvsbu_heatmap.png>
+Package pdftex.def Info: tdvsbu_heatmap.png  used on input line 406.
+(pdftex.def)             Requested size: 509.5042pt x 187.3pt.
+
+Overfull \hbox (92.89458pt too wide) in paragraph at lines 406--407
+ [] 
+ []
+
+[8 <./btvsbf.png> <./tdvsbu_var_n.png>]
+<td_nxv.png, id=69, 618.81187pt x 223.58531pt>
+File: td_nxv.png Graphic file (type png)
+<use td_nxv.png>
+Package pdftex.def Info: td_nxv.png  used on input line 410.
+(pdftex.def)             Requested size: 495.05017pt x 178.86847pt.
+
+Overfull \hbox (78.44055pt too wide) in paragraph at lines 410--411
+ [] 
+ []
+
+<buvsbt.png, id=70, 608.2725pt x 225.84375pt>
+File: buvsbt.png Graphic file (type png)
+<use buvsbt.png>
+Package pdftex.def Info: buvsbt.png  used on input line 426.
+(pdftex.def)             Requested size: 486.61867pt x 180.67523pt.
+
+Overfull \hbox (70.00905pt too wide) in paragraph at lines 425--427
+[]
+ []
+
+[9 <./tdvsbu_heatmap.png> <./td_nxv.png>]
+<backvspd.png, id=76, 874.01532pt x 417.81094pt>
+File: backvspd.png Graphic file (type png)
+<use backvspd.png>
+Package pdftex.def Info: backvspd.png  used on input line 431.
+(pdftex.def)             Requested size: 524.41325pt x 250.68849pt.
+
+Overfull \hbox (48.8073pt too wide) in paragraph at lines 431--432
+[] 
+ []
+
+[10 <./buvsbt.png> <./backvspd.png>] [11]
 ("C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\Algo3_TP1\caratula\build\ca
 ratulaTP1.aux"
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 7562 strings out of 493305
- 104648 string characters out of 3129802
- 315523 words of memory out of 3000000
- 10927 multiletter control sequences out of 15000+200000
- 22435 words of font info for 51 fonts, out of 3000000 for 9000
+ 7410 strings out of 493305
+ 105377 string characters out of 3129802
+ 202636 words of memory out of 3000000
+ 10772 multiletter control sequences out of 15000+200000
+ 20591 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,15n,58p,1380b,1185s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,15n,58p,1832b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\diego\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
 \ecti0800.pk> <C:\Users\diego\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
-\ec\dpi600\tcti0500.pk> <C:\Users\diego\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
-r\jknappen\ec\dpi600\ecti1000.pk> <C:\Users\diego\AppData\Local\MiKTeX\2.9\font
-s\pk\ljfour\jknappen\ec\dpi600\ecti0500.pk> <C:\Users\diego\AppData\Local\MiKTe
-X\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0500.pk> <C:\Users\diego\AppData\L
-ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx0500.pk> <C:\Users\diego
-\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1000.pk> <C:\U
-sers\diego\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800
+\ec\dpi600\ecti1000.pk> <C:\Users\diego\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
+r\jknappen\ec\dpi600\eccc1000.pk> <C:\Users\diego\AppData\Local\MiKTeX\2.9\font
+s\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\diego\AppData\Local\MiKTe
+X\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0600.pk> <C:\Users\diego\AppData\L
+ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\Users\diego
+\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\U
+sers\diego\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0700
 .pk> <C:\Users\diego\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
-0\ecrm0600.pk> <C:\Users\diego\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
-n\ec\dpi600\ecbx1000.pk> <C:\Users\diego\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
-ur\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\diego\AppData\Local\MiKTeX\2.9\fon
-ts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users\diego\AppData\Local\MiKT
-eX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecss1000.pk> <C:\Users\diego\AppData\
-Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1000.pk> <C:\Users\dieg
-o\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1000.pk> <C:\
-Users\diego\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm100
-0.pk> <C:\Users\diego\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi6
-00\ecrm1200.pk> <C:\Users\diego\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknapp
-en\ec\dpi600\ecbx1200.pk> <C:\Users\diego\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
-our\jknappen\ec\dpi600\ecbx2074.pk><C:/Users/diego/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/diego/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/diego/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Us
-ers/diego/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
-7.pfb><C:/Users/diego/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr10.pfb><C:/Users/diego/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr5.pfb><C:/Users/diego/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/diego/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/diego/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/dieg
-o/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+0\ecss1000.pk> <C:\Users\diego\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
+n\ec\dpi600\ecsx1000.pk> <C:\Users\diego\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
+ur\jknappen\ec\dpi600\ectt1000.pk> <C:\Users\diego\AppData\Local\MiKTeX\2.9\fon
+ts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\diego\AppData\Local\MiKT
+eX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\diego\AppData\
+Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\dieg
+o\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk><C:/U
+sers/diego/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cme
+x10.pfb><C:/Users/diego/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmmi10.pfb><C:/Users/diego/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi5.pfb><C:/Users/diego/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/diego/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/diego/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/d
+iego/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+<C:/Users/diego/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><C:/Users/diego/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy7.pfb>
 Output written on "C:\Users\diego\Documents\Facultad\AED 3\Labor\TP1\Algo3_TP1\
-caratula\build\caratulaTP1.pdf" (12 pages, 866103 bytes).
+caratula\build\caratulaTP1.pdf" (12 pages, 945187 bytes).
 PDF statistics:
- 707 PDF objects out of 1000 (max. 8388607)
+ 602 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

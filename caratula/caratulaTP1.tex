@@ -1,4 +1,4 @@
-\documentclass[7pt,a4paper]{article}
+\documentclass[8pt,a4paper]{article}
 \usepackage{clrscode}
 \usepackage[conEntregas]{caratulaTP1}
 \usepackage[spanish]{babel} % para que comandos como \today den el resultado en castellano
@@ -6,6 +6,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage{graphicx}
+\usepackage{enumitem}
+\newcommand{\subscript}[2]{$#1 _ #2$}
 \usepackage[utf8]{inputenc} 
 \usepackage{pdfpages}
 \usepackage{amsmath}
@@ -49,12 +51,12 @@
 \subsection{El problema y sus análisis}
 \begin{verse}
 	El subset sum problem o problema de la suma de conjunto es un problema muy conocido dentro de las ciencias de la computación y matemática por ser un objeto de estudio dentro de la clase  NP-problem \footnote{Problemas de decisión y optimización donde se busca encontrar si existe solución o si existe una mejor que la conocida}, se destaca por su facilidad para describirlo y gran dificultad para resolverlo. Los algoritmos más conocidos que pueden resolverlo tienen una complejidad temporal exponencial y esto se traduce en imposibilidad de resolverlo en casos donde la cantidad de elementos sea grande. \\
-Además de las diferentes versiones de este problema \footnote{Problema de la carga de la mochila; Problema de selección de conjuntos de un conjunto, etc} existen usos muy diversificados en el ámbito cotidiano y científico. No solo sirve como fuente de nuevas investigaciones en el campo de la teoría de complejidad sino también en ramas como la criptografía, programación genética, etc$[3][4]$. %Imaginemos un algoritmo que resuelva problemas a modo de entrenamiento, problemas de tamaños variados y que en muchos casos es necesario clasificar las diferentes soluciones. En los algoritmos genéticos se suele desarrollar un algoritmo que funcione o se comporte como un gen y evaluarlo en consecuencia. Existen casos en los que el output no tienen una correlación real con un gen y es necesario técnicas de apartado o filtrado obtener los más aproximados, y una de ellas está fuertemente relacionada con el Subset Sum Problem.\\
+Además de las diferentes versiones de este problema \footnote{Problema de la carga de la mochila; Problema de selección de conjuntos de un conjunto, etc} existen usos muy diversificados en el ámbito cotidiano y científico. No solo sirve como fuente de nuevas investigaciones en el campo de la teoría de complejidad sino también en ramas como la criptografía, programación genética, etc$[3][4]$. Imaginemos un algoritmo que resuelva problemas a modo de entrenamiento, problemas de tamaños variados y que en muchos casos es necesario clasificar las diferentes soluciones. En los algoritmos genéticos se suele desarrollar un algoritmo que funcione o se comporte como un gen y evaluarlo en consecuencia. Existen casos en los que el output no tienen una correlación real con un gen y es necesario técnicas de apartado o filtrado obtener los más aproximados, y una de ellas está fuertemente relacionada con el Subset Sum Problem.
 
 \bigskip
 	Definición: Dado C conjunto de enteros no negativos y V entero no negativo se desea saber si existe un s $\subseteq$ S tal que $\sum_{r \in R}r$ = V, y si existe que tenga la mínima cardinalidad.
 	
-	\paragraph{Intuición} 	Una de las primeras aproximaciones para buscar una solución puede ser la de formar todos los conjuntos posibles con los elementos de S y analizar si alguno suma V. Por un lado, este algoritmo asegura que si existe solución se va a encontrar; por el otro lado y como contrapartida de lo anterior, si no existe solución o S es muy grande la cantidad de pruebas que son necesarias superará las capacidades de cómputo actuales. %En la actualidad hay diversas ramas que se encuentran con estas dificultades, y la manera en que se suelen evitar es utilizando aproximaciones para el problema y no algoritmos exactos$[5]$. reducir esto tampoco tiene sentido la suposición de determinadas características de S, como el orden de sus elementos, dado que siempre se verificarán todos los subconjuntos.
+	\paragraph{Intuición} 	Una de las primeras aproximaciones para buscar una solución puede ser la de formar todos los conjuntos posibles con los elementos de S y analizar si alguno suma V. Por un lado, este algoritmo asegura que si existe solución se va a encontrar; por el otro lado y como contrapartida de lo anterior, si no existe solución o S es muy grande la cantidad de pruebas que son necesarias superará las capacidades de cómputo actuales. En la actualidad hay diversas ramas que se encuentran con estas dificultades, y la manera en que se suelen evitar es utilizando aproximaciones para el problema y no algoritmos exactos$[5]$. reducir esto tampoco tiene sentido la suposición de determinadas características de S, como el orden de sus elementos, dado que siempre se verificarán todos los subconjuntos.
 	%Un tamaño de S mayor a 80 con este tipo de técnicas significaría un desafío para las capacidades de los procesadores actuales. Si bien las instrucciones por segundo que pueden realizar dependen de muchos factores como cantidad de instrucciones por ciclo del reloj de procesador, cómo interactúa un determinada software con el procesador, la memoria, núcleos del procesador, factores externos, etc, solo un vistazo a la siguiente tabla evidencia aún más el problema. 	\bigskip
 		 %El problema crece exponencialmente respecto al crecimiento de S y si se tiene en cuenta que las procesadores de computadoras personales en promedio pueden tener alrededor de 700GFlops \footnote{Billión de operaciones flotantes por segundo, medida que se utiliza para medir perfomances en los campos científicos computación}, lo que establece una proporción aproximada entre los calcúlos de cantidad de subconjuntos y capacidad de operaciones del procesador de 1 $\approx$ 2000000 operaciones.	\bigskip
 	
@@ -86,7 +88,7 @@ Además de las diferentes versiones de este problema \footnote{Problema de la ca
 %	Cuando se habla de algoritmo pseudo-polimial significa que es polinomial respecto del máximo valor númerico de la entrada, y no del tamaño de la entrada.
 %	O sea que si podríamos suponer que existe una cota para los valores de S, digamos que están acotados por k = $n^{2}$ y hay n = 100, entonces ninguno superará a 10000. Entonces el algoritmo sería polinomial en esa cantidad fija, digamos W y como es acotada por un polinomio de n, digamos $n^{m}$ entonces el algoritmo es polinomial O($n^{m \cdot W}$).
 
-	%Un breve análisis de este problema permitió profundizar acerca de las soluciones encontradas hasta el momento, las diferentes técnicas y formas de expresar sus dificultades utilizadas, y por qué es un objeto tan importante dentro de las ciencias de la matemática y computación este tipo de problemas considerados los NP-P problems.
+%Un breve análisis de este problema permitió profundizar acerca de las soluciones encontradas hasta el momento, las diferentes técnicas y formas de expresar sus dificultades utilizadas, y por qué es un objeto tan importante dentro de las ciencias de la matemática y computación este tipo de problemas considerados los NP-P problems.
 \end{verse}
 \section{Algoritos presentados}
 En este trabajo presentaremos diferentes algoritmos con los que buscaremos experimentar y encontrar los contextos en los cuales sería beneficioso la aplicación de alguno de ellos.
@@ -139,40 +141,6 @@ Esta forma de resolver el problema está fuertemente relacionada con las primera
 Desde el punto de vista de complejidad, si se define en función del tamaño de entrada, y tomando n como el tamaño de S, nuestro algoritmo será $\theta$(n $\cdot$ 2$^{n}$), porque se recorrerá cada subconjunto del conjunto de partes de S y para cada uno revisará cuáles de los n elementos de S están en ese subconjunto.\\
 %Si se definiera en función de m = $\max C$ y si m = $2^{n}$, la complejidad seria O(m $\cdot \log_{2}{m}$ ), valor que en la práctica se podría considerar lineal (respecto a m), una diferencia demasiado grande con respecto a una complejidad exponencial. Resulta interesante pensar en cómo se verá todo estas variaciones en las experimentaciones de este algoritmo.
 
-
-\subsubsection{Código Fuente}
-\begin{lstlisting}
-int bruteforce(vector<int>& c,  long long int valorObjetivo,int &sol,long long int &pasos){
-    int n = c.size();
-    long long int total = pow(2,n);
-    sol=-1;
-    for (long long int i=0; i< total; i++) {
-        long card=0;
-        long sum = 0;
-        for (int j=0; j<n; j++){
-            pasos++;
-            if (i & (1 << j)) { //chequeo si el elem jesimo tiene el bit en 1 (es decir, debe estar en el subconjunto i), si es 0 no esta entonces lo salto.
-                card++;
-                sum += c[j];
-            }
-
-        }
-        if(sum == valorObjetivo) {
-            if(sol==-1){
-                sol = card;
-            }else {
-                if(sol > card) {
-                    sol = card;
-                }
-            }
-        }
-    }
-    (sol == -1 || sol >= n)? sol = -1:1;
-    return sol;
-}
-
-\end{lstlisting}
-
 \subsection{Backtracking}
 Lo que caracteriza a esta forma de resolver el problema es que vamos a buscar definir situaciones en las que seguir computando la solución no tenga sentido. Esto quiere decir abandonando posibles candidatos a solución por temás de optimalidad o posibilidad de la solución, a esto se lo denomina podas. \\
 %Si se modela el Backtracking como un árbol binario[\footnote{Donald Knuth. \it{The Art Of Computer Programming : Fundamentals Algorithms.} Capítulo 2}] puede pensarse que cada nodo representa un nuevo sub-problema o llamada recursiva del problema anterior y puede tener a lo sumo dos llamadas recursivas, es decir, dos hijos. Esto significa que en un árbol balanceado la profundidad será $\log_{2}(2^{n})$ = $n$ y las llamadas recursivas va a estar acotada superiormente por la cantidad de nodo que será:$\approx$ $2^{n}$
@@ -198,129 +166,59 @@ La siguiente imagen muestra la idea de las podas. Si tomamos el punto amarillo s
 \end{center}
 \subsubsection{Algoritmo}
 
+
+
 \begin{codebox}
-  \Procname{$\proc{Backtracking}(Conjunto(enteros):C,entero:sol,entero: V, entero:desde,entero:sumaElem,entero:cantElem)$}
-  %\li $sol \gets -1$
-  %\li $sumaElementos \gets sumaConj(conjAct)$
-\li 	\If $sol = -1$ $or$ $sol !=-1$ $and$ $cantElem < sol$ \Then  
-  %\li \If $todavia$ $no$ $se$ $encontro$ $solucion$ $o$ $si$ $se$ $encontro$ $y$ $el$ $conjunto$ $formado$ $actual$ $tiene$ \\ $menos$ $elementos$ \Then 
-  \li 	\If $sumaElementos = V $ \Then
-  		\li \If $sol = -1$ $or$ $sol > cantElem$ \Then
-  			\li	$sol \gets cantElem$
-  			\End
-  		\End
+  \Procname{$\proc{Backtracking}(Conjunto(enteros):C,entero: V)$}
+  \li $sol \gets -1$ \li 
+  \If $V$ $=$ $0$ \Then \li 
+  	$sol \gets 0 $ \li 
+  	$Devolver$ $0$
   \End 
-  \li $i \gets desde$
-  \li \While  $i <= |C|$ $and$ $sumaElementos <  V $ \li \Do
-  \li \If $(sol = -1$ $or$ $sol < cantElem)$ \Then
-  %\li $agregar(conjAct, C_{i})$
-  
-  \li $cantElem \gets cantElem +1$
-  
-  \li $sumaElementos \gets sumaElementos+C_{i}$
-  \li $i \gets i + 1$ 
-  \li $Backtracking(C,sol,V,i,sumaElementos,cantElem)$
-  %\li $eliminarUltimoElemento(conjAct)$
-  \li $cantElem \gets cantElem - 1$
-  \li $sumaElementos \gets sumaElementos - C_{i}$
-  
-  \End
-  \End 
+  \li $OrdenarAsc(c)$
+  $sol \gets auxBacktracking(c,0,V,sol,0,0)$
+\li \If $sol$ = $-1$ $or$ $sol$ > $|C|$ \Then
+\li 	$Devolver -1$\li 
+\Else \li 
+		$Devolver$ $sol$
+	\End
+  	\End
 \end{codebox}
 
-\subparagraph{Detalle} Como se mencionó anteriormente, suponemos que existe una función auxiliar que llama a esta con los valores de los parámatros bien definidos y C ordenado. La idea del algoritmo es recorrer cada elemento del conjunto de entrada a partir del flag {\it desde}. Mientras no se necesite podar, el algoritmo acumula el valor de los elementos y la cantidad de ellos entre {\it desde} y el final de C. Al mismo tiempo, se recursiona con un C' = C $-$ ${C_{iteracion_actual}}$ y los flags actualizados, o sea, la variable de inicio del subproblema a resolver ahora comenzará en la iteración actual. A {\it sumaElementos} se le descontará el último elemento sumado y {\it cantElem} se reducirá en uno; que es igual a C sin el elemento de la iteración actual. Si se encuentra solución, se almacena en {\it sol}, sin embargo y dado que la diferencia de esta técnica con fuerza bruta es que se trata de apartar candidatos a solución por temas de optimización o factibilidad, el algoritmo termina después de haber intentado analizar todos los posibles subconjuntos del C inicial. \\
-Al comienzo, esta función se llama con los flags {\it desde} = 0, {\it sol} = -1, {\it cantElem} = 0 {\it sumaElementos} = 0.
+\begin{codebox}
+  \Procname{$\proc{auxBacktracking}(Conjunto(enteros):C,entero:sol,entero: V, entero:desde,entero:sumaElem,entero:cantElem)$}
+\li 	\If $sumaActual$ > $valorObjetivo$ \Then 
+		\li $Devolver$ $|C|+1$ 
+		\End
+	\li \If $sol!=-1$ $and$ $cantElem$ >= $sol$ \Then
+		\li $Devolver$ $|C|+1$
+  		\End
+  	\li \If $sumaActual$ $=$ $valorObjetivo$ \Then
+  	\li $sol \gets cantElem$
+  	\li $Devolver$ $0$ 
+  	\End
+  	
+  	\li \If $desde$ $<$ $|C|$ \Then
+  	\li \If $c[desde]$ $+$ $sumaActual$ > $valorObjetivo$ \Then
+  	\li $Devolver$ $|C|+1$ \li
+  	\Else \li$valor1 \gets auxBackTracking(c,desde+1,valorObjetivo,sol,sumaActual,cantElem)$
+  	\li $valor2 \gets 1+auxBacktracking(c,desde+1,valorObjetivo,sol,sumaActual+c[desde],cantElem+1)$
+  	\li $Devolver$ $min(valor1,valor2)$
+  	\End
+\end{codebox}
+
+\subparagraph{Detalle} 
+
+\begin{verse}
+La función principal es Backtracking, que se encarga de recibir el conjunto con el que trabajar, el valor objetivo, y prepara lo necesario para resolver el problema con metodología de Backtracking. En nuestro caso, ordena el conjunto, según documentación de C++, en O($\log{n} \cdot n)$ e inicializa los flags que usará la función recursiva. Estos son: sumaActual, que contiene la suma de los elementos tomados como posible solución por una determinada rama; cantElem que contiene la cantidad de elementos tomados como posible solución por una determinada rama; desde, que permite que cada llamado recursivo sepa desde donde a agregar elementos a la solución en una determinada rama; sol, que es donde se almacena la mejor solución actual que se encontró para el problema y que cada llamado recursivo revisa para conocer si es posible que esa rama mejore la solución actual y en caso contrario podarla. Esta variable, al igual que los conjuntos, se utilizan mediante referencias para no hacer copias de C que puede ser excesivamente grande y para poder conocer en cada subproblema la solución encontrada actualmente, que pudo haber sido actualizada por una rama posterior a la que generó este llamado recursivo y de esta forma puede tener acceso a la solución actual.
+\end{verse}
+
 \subsubsection{Complejidad}
 
-Respecto a la complejidad temporal y estableciéndola en función de tamaño de la entrada, $|$S$|$ = n, analicemos cuál sería el peor caso. El peor caso sería que las podas que definimos no funcionen, y eso pasa si el V que se elige supera a la suma de todos los elementos de C. Con un caso así, nunca sería necesario podar soluciones por factibilidad, porque nunca existirá un subconjunto de C que sume más que V si la suma de C no lo suma y por otro lado como no habrá solución, nunca habrá podas por mejor solución.\\
-En cada paso, el algoritmo realiza a lo sumo n pasos y la complejidad del algoritmo se puede establecer de forma recursiva con la siguiente funcion:
-\begin{align}
- T_{n} = (n-1) T_{n-1} + (n-1) ,
-\end{align}
-
-Sea T' lo siguiente y definiendo y T'(0)=0:
-\begin{align}
- T'_{n} = T'_{n-1} + n,  n = 1, 2, 3...
- T'(n) = T'(n-1) + n = T'(n-2) + (n-1) + n \\  = T'(n-k) + n-k-1 + n-k-2 + ... + n-1 + n = \sum_{i=1}^{n}i,
- \end{align}
- \begin{verse}
- Por suma de Gauss:
- \end{verse}
- \begin{align}
- = \frac{(n\cdot(n+1))}{2} = \frac{n^{2}}{2} \in O(n^{2})
-\end{align}
-
-\begin{verse}
-De modo que la complejidad de T' $\in$ O($n^{2}$). Ordenar inicialmente a C no nos modifica la complejidad porque sería simplemente O(T(n)) + O($\log_{2}n \cdot n$) que sigue siendo asintóticamente acotado superiormente por nuestra cota.
-
-Veámos que T'$_{n}$ $\cdot$ (n-1) $\approx$ T$_{n-1}$ $\cdot$ (n-1) + $n^{2}$, que por lo visto antes $\in$ O(n) $\cdot$ O($n^{2}$) $\cdots$ ¿$\in$ O($2^{n} \cdot n$ )?  \\
-Sea C constante, vemos si existe un valor $x_{i}$ tal que $\forall$ $x_{j}$ $\geq$ $x_{i}$ a partir del cual valga:
-\end{verse}
-
-\begin{align}
-n^{3} \leq c \cdot 2^{n} \cdot n, \text{  n $>$ 0}, n^{2} \leq c \cdot 2^{n}
-\end{align}
-\begin{verse}
-Aplicamos función creciente a ambos lados sin cambiar la desigualdad
-\end{verse}
-\begin{align}
-\log_{n} n^{2} \leq c \cdot n, 2 \log_{n}n \leq c \cdot n
-\end{align}
-Y esto es cierto. Ahora falta ver si O(T$_{n}$) $\in$ O(T$_{n-1}$ $\cdot$ (n-1) + $n^{2}$).\\
-Sea K constante, vemos si existe un valor $x_{i}$ tal que $\forall$ $x_{j}$ $\geq$ $x_{i}$ a partir del cual valga:
-\begin{align}
-	T_{n-1} \cdot (n-1) + n < K (\cdot T'_{n-1} \cdot (n-1) + n^{2})
-\end{align}
-Si K = 1
-\begin{align}
-	 n < n^{2}
-\end{align}
-\\ Entonces el algoritmo de backtracking $\in$ O($2^{n} \cdot n$)
+Respecto a la complejidad temporal y estableciéndola en función de tamaño de la entrada, $|$S$|$ = n, veamos que el peor caso sería si para ningún llamado recursivo existe poda, es decir, el valor objetivo es mayor que cualquier sumatoria de subconjunto de C (no hay poda de factibilidad) y como tampoco se encuentra solución alguna no se puede podar llamados recursivos por poda de optimalidad. De modo que terminaría después de probar con cada subconjunto (el conjunto de partes de C).\\
+Cada elemento de C (n en total), generaría dos llamados recursivos con el flag desde = desde + 1, o sea que estos llamados recursivos del elemento $C_{1}$ generarían a su vez cada uno de ellos otros dos llamados, pero de tamaño |C|-1 el conjunto y así sucesivamente. Esto generaría un árbol binario completo de $2^n$ nodos y n hojas. Como cada llamado recursivo va actualizando la suma de los elementos que le llega de su predecesor, no aporta a la complejidad (más alla de los $2^{n}$ nodos que se recorren) la suma de los elementos que se consideran en esa rama de soluciones. La complejidad quedaría entonces O($2^{n}$) + O(n $\cdot$ $\log{n}$) = O($2^{n} + (n \cdot \log{n})$) $\in$ O$(2^{n}$ $\cdot$ $n)$.
 
 
-\subsubsection{Código Fuente}
-\begin{lstlisting}
-
-int backtracking(vector<int> c,  long long int valorObjetivo, int& sol,long long int &pasos) {
-    sol=-1;
-    sort(c.begin(),c.end()); //ordenamos de menor a mayor en aprox segun c++ (log |c| * |c|)
-    auxBacktracking(c,0,valorObjetivo,sol,0,0,pasos);
-    if(sol==-1 || sol >= c.size()) {
-        return -1;
-    }else{
-        return sol;
-    }
-}
-
-void auxBacktracking(vector<int>& c, int desde,  long long int valorObjetivo, int& sol, long long;  int sumaActual,  long long int cantElem,long long int &pasos){
-    if(sol==-1 || (sol != -1 && cantElem < sol)){
-        if(cantElem > 0) {
-            if(sumaActual == valorObjetivo) {
-                if(sol==-1){
-                    sol = cantElem;
-                }
-                else {
-                    if(sol > cantElem) {
-                        sol = cantElem;
-                    }
-                }
-            }
-        }
-    }
-    for (int i = desde; i < c.size() && sumaActual < valorObjetivo; ++i) {
-        pasos++;
-        if( sol==-1 || sol!=-1 && sol > cantElem) {
-            desde++;
-            sumaActual +=c[i];
-            cantElem++;
-            auxBacktracking(c,desde,valorObjetivo,sol,sumaActual, cantElem,pasos);
-            cantElem--;
-            sumaActual -=  c[i];
-        }
-    }
-}
-
-\end{lstlisting}
 
 \subsection{Programación Dinámica}
 
@@ -353,43 +251,67 @@ Y en particular debe ser óptima. Supongamos por el absurdo que no. La solución
 La otra posible solución sería que $e_{1}$ sí sea parte de la solución, es decir, habría que encontrar elementos que sumen V' con los elementos del conjunto C' :
  \[ C' = C - \{e_{1}\}\]
 \[ V' = V - e_{1}\]
-O sea que la solución óptima sería 1 + K, K $\leq $ |C'|, K solución. Si existiese un Q $ $ < $ $1+K y la suma de los elementos de Q = V', es decir hay una solución mejor para el problema con C' y V'. Pero entonces ahora K = Q y la solución óptima es K + 1, donde el 1 representaría el primer $e_{1}$ que por el análisis de este caso formaba parte de la solución óptima.
+O sea que la solución óptima sería 1 + K, K $\leq $ |C'|, K solución. Si existiese un Q $ $ < $ $1+K y la suma de los elementos de Q = V', es decir hay una solución mejor para el problema con C' y V'. Pero entonces ahora K $=$ Q y la solución óptima es K + 1, donde el 1 representaría el primer $e_{1}$ que por el análisis de este caso formaba parte de la solución óptima.
 \end{verse}
 
 \bigskip
 \subsubsection{Formulación recursiva}
-Se define PD una función que recibe un conjunto S, de elementos enteros no negativos, un valor V entero no negativo y un entero que representa el tamaño de S inicial, devuelve el mínimo cardinal del subconjunto s perteneciente a S que todos los elementos suman V; si no existe se devuelve n, tamaño de S, simbolizando la imposibilidad de encontrar solución. \\
+Se define PD una función que recibe un conjunto S, de elementos enteros no negativos, un valor V entero no negativo y un entero que representa el tamaño de S inicial, devuelve el mínimo cardinal del subconjunto s perteneciente a S que todos los elementos suman V; si no existe se devuelve n+1, n tamaño de S, simbolizando la imposibilidad de encontrar solución. \\
 \[
 \begin{array}{@{} r @{} c @{} l @{} }
 &PD(S, V, n)&{}=\displaystyle
 \begin{cases}
-\ n &\text{si } \text |S| = 0 \wedge V \neq 0 
+\ n+1 &\text{si } \text |S| = 0 \wedge V \neq 0 
 \\
 \ 0 &\text{si } \text V = 0 
 \\
 PD($\{$e_{2},e_{3},\dots,e_{n}$\}$,V,n)  &\text{si } e_{1} $>$ V
 \\
-1 &\text{si } e_{1} $=$ V
+1 &\text{si } e_{1} = V
 \\
 \min_{} (1 + PD($\{$e_{2},e_{3},\dots,e_{n}$\}$, V - e_{1}, n),PD($\{$e_{2},e_{3},\dots,e_{n}$\}$, V, ))&\text{otro caso }
 \\
 \end{cases}
 \end{array}
 \]
-
-
+Cabe resaltar que a modo de una formulación más intuitiva, cada llamado se hace envíando un S modificado, algo que en una implementación tendría un costo muy grande de copias, es por eso que en código se utilizará una referencia (nunca se copia) al conjunto inicial (y no se modificará) y para saber los límites del conjunto en el llamado recursivo actual se usa un flag {\it desde} que hace referencia a los elementos que se pueden usar en ese llamado.
 \subsubsection{Algoritmo Top Down}
+\begin{codebox}
+\Procname{$\proc{AUX-Topdown}(C,V)$}
+  \li \If $|C|$ $=$ $0$ \Then
+  \li \If $V$ $=$ $0$ \Then
+  	\li $sol \gets 0$
+  	\li $Devolver$ $0$
+  	\li \Else
+  	\li $sol \gets -1$
+  	\li $Devolver$ $-1$
+  	\End
+  \li \ElseIf $V$ $=$ $0$ \Then
+  	 \li $sol \gets -1$
+  	\li $Devolver$ $-1$
+  \End
+	\li $soluciones \gets$ $matriz$ $de$ $n$ $X$ $V$ $con$ $-1$ $en$ $los$ $valores$
+	\li $soluciones_{0,0} \gets 0$
+	\li $sol \gets Topdown(C,V,0,soluciones,|C|)$
+	\li \If $sol$ $>$ $|C|$ $or$ $sol$ $=$ $-1$\Then
+		\li $Devolver$ $-1$
+		\li \Else
+		\li $Devolver sol$
+	\End
+
+\end{codebox}
 
 \begin{codebox}
 \Procname{$\proc{Topdown}(C,V, desde, memoria,n)$}
-  \li \If $NoExiste(C,V,desde,memoria)$ \Then
-  \li \If $desde < 0$ \Then
+ \li \If $desde < 0$ \Then
   	\li \If $V =0$ \Then 
   	\li $devolver:0$
   	\li \Else
-  	\li $devolver:n$
-  \End
-  \End
+  	\li $devolver:n+1$
+  \End 
+ \End
+  \li \If $NoExiste(C,V,desde,memoria)$ \Then
+ 
 \li \If $c_{desde}==V$ \Then
 	\li	$Guardar(1,V,desde,memoria,n)$
 	\li \Else
@@ -403,64 +325,24 @@ PD($\{$e_{2},e_{3},\dots,e_{n}$\}$,V,n)  &\text{si } e_{1} $>$ V
 		\li $Guardar(valor3,V,desde,memoria,n)$	
   		\End
   \End
-  \li $Devolver: -1$  $si$ $memoria_{desde,V} \geq n$
+  \End
+\li $Devolver: -1$  $si$ $memoria_{desde,V} \geq n$
 \li $Devolver: memoria_{desde,V}$ $si$ $no$
 
 \end{codebox}
 
 \begin{verse}
-Esto asegura que cada problema que se quiera resolver primero verificará si no esta resuelto. Si lo está, accedemos a la información y la devolvemos. Si no está, se calcula, se guarda y se devuelve. Para tener un acceso eficiente, la implementación de memoria debe ser una matriz de |S| x V, donde $memoria_{desde,V}$ contiene la mínima cantidad de elementos que se necesitan para formar V con elementos de $C_{1}$ hasta $C_{desde}$. A nuestro algoritmo suponemos que llega ya iniciada, es decir, con -1 en todas las posiciones simbolizando que todavía no se guardo solución y en la posición (0,0) se completa con 0 como caso base. Desde es un dato bandera que se utiliza para saber desde dónde comenzar a buscar, porque el algoritmo parte de una problema que en caso de no tener solución pre-calculada se debe computar y es importante saber desde qué problema estamos se está haciendo esto. La primera vez que se llama la función desde = n, ya que hay que formar V con cualquier subconjunto de S. La ventaja de esta implementación con respecto a la próxima es que solo calcula los subproblemas que necesita y nunca calcula un subproblema más de una vez. Una de las desventajas es que al funcionar por recursión se almacena cada llamada recursiva y si la llamada genera un árbol muy grande podría aparecer un problema de memoria.\\
+Tenemos dos algoritmos, el primero que es el que se encarga de analizar si el problema no es un caso base y devuelve la solución que corresponde y en caso contrario inicializa lo necesario para poder aplicar el algoritmo de Top-Down. Las cosas que se inicializan son, la memoria, implementada sobre una matriz de n x (V+1)\footnote{Se le suma 1 simplemente para tener una columna que se corresponda con el valor objetivo, dado que los indices empiezan en 0 y van hasta tope-1. No modifica la complejidad asintótica esto}, donde se va a reutilizar los subproblemas ya calculados, el flag desde que permite a Top-Down saber desde cuál es el problema actual que hay que empezar a dividir en subproblemas.\\ El algoritmo de Top-Down primero preguntar si ya se calculo previamente el resultado del problema y en caso contrario lo calcula y lo almacena en memoria, que se utiliza mediante referencia para no hacer copias y tenerla todo el tiempo actualizad .\\ Es importante recalcar que tanto Aux-Top-Down como Top-Down utilizan a C por referencia, para no estar haciendo copias, que cuando n es grande podrían significar tiempos de ejecución mucho mayores.
+\\
+La explicación de complejidad es un poco más difícil que para el próximo algoritmo porque en este hay llamados recursivos que hay que demostrar que no hacen cosas imprevisibles y arruinan la complejidad.\\
+Imaginemos a la matriz de n x V, y pensemos que todavía no se calculó ningún resultado. Empezamos de la última fila i y columna j. Puede haber uno o dos llamados recursivos. Si hay uno, necesariamente la posición del proximo subproblema es la de (i-1)(j). Si hay dos,  una de esas posiciones será (i-1)(j)  y la otra (i-1)(j-$C_{k}$), donde k es, en este caso 1, pero que va de 1 a n. La cuestión es que más allá de que se llaman al mismo tiempo, hay un orden. Ese orden permite que cuando se hacen los dos llamados, primero se va a resolver uno y después el otro y si se llegara a dar que el llamado dos cae en una posición de un subproblema que ya calculó el otro llamado, es trivial que la solución se consigue en O(1) en ese llamado y cualquiera que utilice problemas ya calculados por el primer llamado. Si esto lo extendemos a toda la matriz, después del primer o los dos primeros llamados, uno de ellos se va terminar de resolver y recién ahí se resolverá el otro. Y en particular este comportamiento se repite para todos los llamados que generen los llamados del primer llamado (digamos $L{1}$). Como la matriz es finita, para cada fila (n) $L{1}$ va a generar dos llamados como máximo. Cada llamado recursivo se genera porque no había solución para el subproblema. Como la cantidad de subproblemas es n x V y los llamados recursivos se resuelven en orden, la máxima cantidad de llamados tiene que ser n x V, porque si no estaríamos diciendo que se van a hacer llamados recursivos para problemas ya calculados y esto no puede ser porque después de calcularlos los guardamos y particularmente al trabajar por referencia, al actualizar la memoria en un determinado llamado, todos los llamados anteriores que todavía no fueron resueltos tienen la memoria actualizada.
 \end{verse}
 
-\subsubsection{Código Fuente}
-\begin{lstlisting}
-int buscarValorObjetivoPD_top_down(vector<int> conj,  long long int valorObjetivo, int& sol,long long int &pasos) {
-    sol=-1;
-    if(conj.size() == 0){
-        if(valorObjetivo == 0) {
-            sol=0;
-            return 0;
-        }else{
-            sol=-1;
-            return -1;
-        }
-    }else if(valorObjetivo == 0) {
-        sol=0;
-        return 0;
-    }
-    vector<vector<int> > soluciones(conj.size(),vector<int>((valorObjetivo+1),-1)); //inicializo matriz n x V con -1
-    soluciones[0][0]=0;
-    sol=aux_top_down(conj,valorObjetivo,conj.size(),soluciones, conj.size()-1,pasos);
-    (sol > conj.size() || sol == 0)? sol=-1 : 1;
-    return sol;
-}
-
-int aux_top_down(vector<int> conjActual,  long long int valorObjetivo, int tamInicial, vector<vector<int> > & memoria, int desde,long long int &pasos) {
-    pasos++;
-    if(desde < 0) {
-        if(valorObjetivo==0) {
-            return 0;
-        }else {
-            return tamInicial+1;
-        }
-    }
-    if(memoria[desde][valorObjetivo] == -1) { // si no esta calculada
-        if(conjActual[desde] == valorObjetivo){
-            memoria[desde][valorObjetivo] = 1;
-        }else if(conjActual[desde] > valorObjetivo) {  //si el valor actual es mayor que el valor objetivo no puede ser parte de la sol
-            memoria[desde][valorObjetivo] = aux_top_down(conjActual,valorObjetivo,tamInicial,memoria,desde-1,pasos);
-        }else{
-            memoria[desde][valorObjetivo] = min(1 + aux_top_down(conjActual,valorObjetivo-conjActual[desde],tamInicial,memoria,desde-1,pasos), aux_top_down(conjActual,valorObjetivo,tamInicial,memoria,desde-1,pasos));
-        }
-    }
-    return memoria[desde][valorObjetivo];
-}
-\end{lstlisting}
 \subsubsection{Algoritmo Bottom Up}
 \begin{codebox}
 \Procname{$\proc{BottomUp}(C,V,n)$}
 \li $memoria \gets matriz$ $de$ $n$ $\cdot$ $V$ $de$ $enteros$ $vacia$
-\li $cargarConValores(memoria,n)$
+\li $cargarConValores(memoria,n+1)$
 \li $memoria_{0,0} \gets 0$
 \li \For $i \gets 2$ \To $n$
 \li	 	\For $j \gets 1$ \To $V$
@@ -477,145 +359,119 @@ int aux_top_down(vector<int> conjActual,  long long int valorObjetivo, int tamIn
 \li $Devolver: memoria_{n,V}$ $si$ $no$
 
 \end{codebox}
-\begin{verse}
-A diferencia del algoritmo anterior donde a partir de un input se buscaba si estaba almacenada su solución y posteriormente si estaba se devolvía y si no se calculaba y devolvía, en este directamente a partir de un input, se computan todos los posibles subproblemas del input en una matriz de n $\cdot$ V y al final de todo se devuelve el problema inicial, es decir, se construyen todas las subsoluciones hasta llegar al problema grande y se devuelve su solución. En el algoritmo se puede ver los movimientos que hace por la matriz son: si el elemento en la posición i, C$_{i}$ es mayor que el valor objetivo, entonces la  solución va a venir de buscar en la fila anterior. Si en cambio esto no pasa, la solución también puede ser ir a la fila anterior o agregar el elemento c$_{i}$ a la solución y analizar ahora un nuevo problema, donde la busqueda de la solución será de la fila anterior pero con la columna movida hacia la izquierda, dado que cambió el valor objetivo. 
-\\
-La desventaja de esta implementación es que siempre se calculan todos los subproblemas, aunque como ventaja podría reducirse la complejidad espacial solo almacenando las filas que se vayan a utilizar, analizando cuál es el workflow dentro de las celdas de la matriz y eliminando las ya utilizadas.
+\begin{verse} 
+Inicialmente se inicializa la estructura donde vamos a almacenar los resultados de todos los subproblemas. Particularmente se inicializa la primera fila (la 0) con el valor n+1, que simbolizaría la imposibilidad de formar el valor objetivo con 0 cosas, excepto en la posición 0,0, que la definimos como 0.\\
+Esta implementación se corresponde de forma muy evidente con su nombre: si imaginamos un problema como la raíz de un árbol y a los hijos como sus subproblemas es muy intuitivo el funcionamiento. Este algoritmo se basa en empezar resolviendo los subproblemas más chicos y resolver el problema que los generó, es decir, su padre. Dado que el padre de todos es el problema inicial, si repetimos este procedimiento mientras el padre tenga algún predecesor, terminaríamos resolviendo el problema inicial.\\
+Como consecuencia de este funcionamiento tan estructurado, se resuelven todos los posibles subproblemas y no los necesarios, como Top-Down, de modo que es esperable que si el tamaño de C o el valor objetivo son grandes, se notará en la performance. Por otro lado la justificación de la complejidad es más simple, dado que no hay llamados recursivos que analizar, sino que se recorren las n x V celdas y se guarda el valor que le corresponde, que viene de alguna celda correspondiente a la fila anterior y alguna columna. Como la primera fila de la matriz tiene los "casos base", cada uno de las n x V iteraciones es O(1) porque simplemente pone en la celda actual el valor de otra celda o el valor del mínimo de otras celdas, que accede en O(1). Entonces es trivial que la complejidad es O(n x V).
 \end{verse}
 
-\subsubsection{Código Fuente}
-\begin{lstlisting}
-int buscarValorObjetivoPD_bottom_up( long long int &valorObjetivo, vector<int> &conj, int& sol,long long int &pasos) {
-    sol = -1;
-    if(conj.size() == 0){
-        if(valorObjetivo == 0) {
-            sol = 0;
-            return 0;
-        }else {
-            sol = -1;
-            return -1;
-        }
-
-    }else if(valorObjetivo == 0) {
-        sol = 0;
-        return 0;
-    }
-    vector<vector<int> > soluciones;
-    soluciones.resize(conj.size()+1);
-    for (int i = 0; i < conj.size()+1; ++i) {
-        soluciones[i].resize(valorObjetivo+1);
-    }
-    vector<int> c = conj; //agrego un elemento a C para poder indexar de forma mas clara
-    c.push_back(0);
-    int aux = c[c.size()-1];
-    c[c.size()-1] = c[0];
-    c[0] = aux;
-    for (int j = 0; j < valorObjetivo+1; ++j) {
-        soluciones[0][j]=c.size();
-    }
-    soluciones[0][0]=0;
-    for (int i = 1; i < c.size(); i++) {
-
-        for (int j = 0; j < valorObjetivo+1; ++j) {
-            pasos++;
-            if(c[i] > j ) {//si el elemento actual supera el valor objetivo no puede ser solucion
-                soluciones[i][j] = soluciones[i-1][j];
-            }else {
-                soluciones[i][j] = min((soluciones[i-1][j]),1+(soluciones[i-1][j-c[i]]));
-            }
-        }
-
-    }
-    sol = soluciones[c.size()-1][valorObjetivo];
-    (sol > conj.size() || sol == 0)? sol=-1 : 1;
-    return sol;
-}
-\end{lstlisting}
-
-
-\subsubsection{Complejidad}
-\begin{verse}
-Podemos asegurar que la cantidad de operaciones del algoritmo nunca excederá n x V, que es la complejidad a la que estamos ajustados, dado que las operaciones en cada paso reducen al  valor objetivo actual o la cantidad de elementos con los que operar. Esto quiere decir que cada paso mueve nuestro {\it celda subproblema} empezando desde la última posición y moviéndose en cada paso una fila hacia arriba o columnas hacia la izquierda, hasta que el rango de la matriz no lo permite.
-En el caso del bottom-up la complejidad en cualquier caso $\in$ O($n \cdot V$), mientras que en el top-down sólo la cota superior $\in$ O($n \cdot V$). 
-\end{verse}
 
 \section{Experimentación}
 \begin{verse}
-Las pruebas que se hagan con valores random se harán utilizando la libreria numpy en python y con diferentes distribuciones. Además, se testearán varias veces cada instancia en cada algoritmo para sacar un promedio de los tiempos de ejecución reduciéndo al mínimo las posibles oscilaciones circunstanciales.
+Para la experimentación primero se probará con casos de test para comprobar la correctitud de los algoritmos. Sin embargo y dado que instancias excesivamente grandes demandarían mucho tiempo en hacer el cálculo a mano para comprobar los resultados, se aprovechará la etapa de experimentación con instancias generadas en Python no solo para guardar la información necesaria para la experimentación  sino que también para cada instancia se comparará cada uno de los resultados de los cuatro algoritmos. Evidentemente no es una prueba exacta pero da mayor seguridad a la hora de la correctitud.\\
+Las pruebas que se hagan con valores random se harán utilizando la libreria numpy en Python y para el análisis de los resultados de los algoritmos se usará: pandas, seaborn, matplotlib.pyplot y jupyter notebook. Además, se testearán 4 veces cada instancia en cada algoritmo para sacar un promedio de los tiempos de ejecución reduciendo al mínimo los posibles ruidos. Para la ejecución de los algoritmos y sus tiempos se utilizará una porción de código mostrada en una clase de laboratorio de experimentación.
 \\
-\subsection{Experimento 1}
+\subsection{Fuerza Bruta y Backtracking: exponenciales}
 
-Los primeros análisis sugiere empezarlos comparando los algoritmos más básicos como fuerza bruta y backtracking. Posiblemente el algoritmo de fuerza bruta no permita ser computado para tamaños de C excesivamente grandes y los otros algoritmos sí, entonces sería razonable que se experimenten los algoritmos de forma cruzada y estableciendo relaciones y no todos de forma simultánea porque podría perderse información.
-Además, la implementación de los algoritmos sugiere que ante contextos de C pequeños, el crecimiento de ambos es similar hasta un determinado valor de n, mientras que para casos de C grandes fuerza bruta no sería opción. Veámoslo.
+Los primeros análisis sería interesante empezarlos comparando los algoritmos más básicos como fuerza bruta y backtracking. Posiblemente el algoritmo de fuerza bruta no permita ser computado para tamaños de C excesivamente grandes y los otros algoritmos sí, entonces sería razonable que se experimenten los algoritmos de forma cruzada y estableciendo relaciones y no todos de forma simultánea porque podría perderse información.
+Además, la implementación de los algoritmos sugiere que ante contextos de peor caso y |C| razonablemente chico, mientras que para casos de C grandes serían algoritmos sin uso práctico.
 \\
-Fijemos los valores de los elementos de C de forma aleatoria y acotados por n y al valor objetivo =$n^{3}$, asegurándonos con esto que las podas nunca van a funcionar, dado que nunca C sumará el valor objetivo y como no habrá solución tampoco se aplicará la poda por optimalidad. Esto significa que no conseguiremos exactamente un peor caso si no uno promedio, dado que estamos generando los elementos de forma random bajo determinados parámetros. Evaluemos para instancias de n = 1,2,$\cdots$26 que parecen ser instancias representativas del problema y dada la complejidad de fuerza bruta es posible con n superiores el tiempo de ejecución no sea razonable, de modo que para evitar la pérdida de información por falta de instancias para n más grandes lo vamos a reemplazar con más instancias. \\
-\begin{center}
-\includegraphics[scale=.4]{wc_bf_graph.png}
-\end{center}
-%\begin{center}
-%\includegraphics[scale=.4]{wc_rel_graph.png}
-%\end{center}
-Se puede ver la relación entre ambos algoritmos en función del tiempo. Por un lado, para contextos de tamaños de C chicos (hasta 20 elementos) los dos algoritmos tienen tiempos de ejecución similares, por eso se ve un tramo constante. Después hay crecimiento de fuerza bruta respecto de backtracking, lo cual coincide con el pensamiento inicial de que fuerza bruta es una solución {\it no tratable} como habíamos visto en la introducción. %Lo que se ve es una especie de inversión de crecimiento entre n = 18..22, pero hay que tener en cuenta que es muy puntual y representa un decrecimiento muy chico, está en función del tiempo en ms y básicamente es menos de un ms.\\
-Veamos por último que efectivamente un gráfico del algoritmo de fuerza bruta demuestra que no sólo tiene un crecimiento exponencial sino que este ya es demasiado grande para n $\geq$ 25.
-\\
-Analicemos cuál es el resultados de utilizar algoritmos de programación dinámica en este tipo de instancias:
-%\subsection{Experimento 2}
-%Los algoritmos de programación dinámica si bien pertenecen a una misma caracterización, tienen implementaciones con rasgos que nos permiten pensar ciertas cosas: si tenemos un caso donde, por ejemplo, nuestro valor objetivo es de la misma magnitud que los elementos de C, quiere decir que en top-down rápidamente vamos a cómputar la solución, porque se reducen la cantidad de subproblemas (llamados recursivos) si los elementos de C son tan grandes como el valor objetivo, sin embargo, en bottom up de cualquier forma habría que computar todos los subproblemas. En el backtracking se activarían las podas y también se vería beneficiado. Aunque en un peor caso, si los valores de C son muy chicos, el recorrido de top down se va a extender demasiado y el backtracking actuaría como un fuerza bruta.\\
-%Entonces iniciemos probando con n = 2 $\cdots$ 30, para tener una amplia gama de tamaños de C y lo suficientemente cercanos para ver los saltos, porque se supone que van a realizar los problemas más rápidamente y entonces necesitamos una mayor cantidad de instancias. Además, fijemos V aleatorio en el orden de $n^{3}$ para conseguir un espectro grande de valores y los elementos de C aleatorios en el orden de $n$. De esta forma nos tendremos una densidad uniforme entre los valores de C junto con un valor objetivo alto. Esperamos ver que el backtracking tenga un crecimiento asintótico al de fuerza bruta, que el top down a base de su memorización de resultados previos saque ventaja frente a bottom up, que a medida que n crezca tendrá matrices más grandes que completar.
-\begin{center}
-\includegraphics[scale=.4]{wc_bu_vs_td_graph.png}
-\end{center}
-Efectivamente los algoritmos de programación dinámica tienen tiempos similares en este tipo de instancias y el backtracking tuvo un comportamiento de crecimiento exponencial, aunque siendo ampliamente mejor ante un fuerza bruta.
-%\begin{center}
-%\includegraphics[scale=.4]{wc_bt_graph.png}
-%\end{center}
-Con este gráfico vemos cómo el backtracking en las instancias de peor caso (elementos de C de orden muy chico respecto a V)  y analizando una cantidad suficiente de instancias tiene un crecimiento exponencial como indica la complejidad teórica a la que pertenece.\\
-Para terminar este análisis fijemos un n, los valores de C entre 0 y V y al valor objetivo entre n y $n^{3}$ para tener una gama amplio respecto de V. Veamos entonces más en profundidad si estas relaciones entre los algoritmos de programación dinámica realmente son por las relaciones entre V y elementos de C.\\
-\begin{center}
-\includegraphics[scale=.4]{wc2_bu_vs_td_graph.png}
-\end{center}
-La razón de visualizar la información obtenida en gráficos separados es que ambos se mueven en diferentes escalas de tiempo, pero sin embargo hay hechos que se pueden resaltar. Ambos crecen a medida que V crece, aunque bottom up lo hace de forma mucho más estable que top down, que es parte de lo que queríamos probar. El motivo de las oscilaciones debe tener varias razones, intentemos explicar algunas: al determinar instancias tan grandes de datos se hace necesario generarlos aleatoriamente bajo determinados parámetros,  nada quita que la aleatoriedad genere casos borde que no pertenecerían a la media de instancias que buscamos generar. Por otro lado pero también afectado por esto, cuando existen instancias de tanta densidad de elementos de C acotados ampliamente por V, las llamadas recursivas de top down son cada vez más grandes y además no son gratis, hay que almacenarlas, si en particular una llamada genera un árbol de subproblemas excesivamente grande el problema es enorme.
-\\
-Un hecho curioso sacado de esto es que el backtracking, en este tipo de casos donde hay muchas chances de que las podas tengan una alta actividad, no solo compite sino mejora al bottom up como se ve a continuación:
 
 \begin{center}
-\includegraphics[scale=.4]{wc_bt_vs_bu_graph.png}\end{center}
+\includegraphics[scale=.7]{bf_var_v_plot.png}
+\end{center}
+Podemos ver que ambos algoritmos tienen pinta de tener la complejidad exponencial respecto de n anteriormente analizada. Y también se puede inferir que el valor objetivo no es una variable para la complejidad de estos algoritmos, ya que vemos que con diferentes valores objetivos parecen ser iguales crecimientos asintóticos.\\ 
+\begin{center}
+\includegraphics[scale=.7]{bt_bf_var_v.png}
+\end{center}
+Con estos gráficos podemos confirmar que el valor objetivo no es un factor dentro de la complejidad de estos algoritmos. Podemos ver como a medida que el valor objetivo crece, para n variados en general, los algoritmos son asintóticamente constantes. En Backtracking podemos ver que en los primeros valores de V esto no se cumple, pero es porque en esos valores de V la relación con los elementos de C permite efectuar podas, mientras que para V excesivamente grandes, donde ya no hay podas, el valor de V no afecta. Como conclusión, Fuerza Bruta no es afectada por el valor objetivo, mientras que Backtracking podría tener casos donde la relación de los elementos de C y el valor objetivo permite encontrar una o más soluciones y esto genera podas que en la práctica reduce la complejidad teórica.\\
+
+\begin{center}
+\includegraphics[scale=.8]{btvsbf.png}
+\end{center}
+Finalmente podemos terminar de afirmar que los algoritmos cumplen con la complejidad teórica, que son efectivamente exponenciales en el peor caso y que las variaciones del valor objetivo no tienen una correlación con la complejidad. El único comentario es que se puede ver como para V $=$ 100 sigue manteniéndose que no constante respecto a la exponencial del backtracking, y eso se debe a como vimos en los anteriores casos, en esos V empieza a encontrar soluciones y funcionar algunas podas y por ello la complejidad es menor. Para los demás casos en donde V es de mucho mayor orden que los elementos de C, backtracking es exponencial (particularmente a la función $2^{n} \cdot n \log{n}$ y fuerza bruta a $2^{n} \cdot n$).\\
+
+\subsection{Top Down y Bottom Up: lineales en n x V}
+\begin{verse}
+Como antes, comenzaremos analizando con los peores casos y tratando de llegar a ver que cumplen la complejidad anteriormente analizada. En Bottom-Up vimos que siempre resuelve todos los subproblemas en una matriz de n x V, y en Top-Down también existe una matriz de n x V (complejidades espaciales en teoría asintóticamente iguales en ese punto), pero a diferencia sólo resuelve los que necesita, de modo que esperamos ver ciertas diferencias en los mapas de calor.
+\end{verse}
+\begin{center}
+\includegraphics[scale=.9]{tdvsbu_var_n.png}
+\end{center}
+\begin{verse}
+Los gráficos están en escala logarítmica en ambos ejes para una mejor visualización, sobre todo en el eje x donde el valor objetivo va desde 100 a 50000. \\
+En ambos podemos inferir que existe un crecimiento dependiente de n y v , porque si bien los algoritmos crecen a medida que aumenta V, también se ve que para C cada vez más grandes el crecimiento también existe. Por otro lado, hay que remarcar que el Top-Down tiene no solo un crecimiento más aplastado, producto de no calcular todos los subproblemas, sino menores tiempos.\\
+Veamos los algoritmos en algo que nos permita comparar de forma más clara las variaciones en función de V y n.
+\begin{center}
+\includegraphics[scale=.8]{tdvsbu_heatmap.png}
+\end{center}
+Con los mapas de calor se puede observar cómo los aumentos de n y V influyen directo en la performance de los algoritmos de programación dinámica. Sin embargo, también hay que notar que en Top-Down el proceso de aumentar n y V no empeora la performance del algoritmo de forma tan escalonada como en Bottom Up sino que el tipo de instancias definen en parte la performance que tendrá, en función de los subproblemas que tenga que resolver. 
+\begin{center}
+\includegraphics[scale=.8]{td_nxv.png}
+\end{center}
+De nuevo, con este último podemos terminar de asegurar que los algoritmos tienen la complejidad anteriormente analizada (n $\cdot$ V).
+% En los siguientes gráficos vamos a ver un poco más en detalle el comportamiento para V menores, particularmente hasta 1000, que es donde los anteriores no aportaban demasiado.
+\end{verse}
+
+
+
+
+
+
+\subsection{Backtracking vs programación dinámica}
+\begin{verse}
+Nota: dado que tanto Top Down y Bottom Up son algoritmos de programación dinámica, vamos a utilizar para los análisis sólo al último como representante de esta metodología.\\
+Ahora trataremos de buscar contextos en cada uno de estas metodologías se impongan.\\
+Empecemos analizando los mejores casos para Backtracking. Estos necesitan ser instancias en donde se apliquen podas la mayor cantidad de veces posibles, y esto pasa si todo el tiempo se pueden encontrar mejores soluciones o evitamos grandes ramas de soluciones porque los valores de los elementos de C a partir de una posición son mayor que V (y aca ayuda que el Backtracking ordena a C). Fijemos para esto  valores de V entre 0 y $n^{2}$ y los valores de C entre 0 y V, de modo de tener ciertas relaciones entre los valores y que a su vez sean lo suficientemente abarcativos.
+\includegraphics[scale=.8]{buvsbt.png}	
+Es apreciable que en este tipo de instancias, la performance de un algoritmo de programación dinámica tiende a ser menor a la de Backtracking, que obtiene muchos beneficios de sus podas. Lo más interesantes es ver (en el segundo gráfico) que si fijamos a V = 10000 (un numero considerablemente grande) y los elementos de C siguen entre 0 y V, el algoritmo de programación dinámica es aún menos eficiente, y es razonable por lo antes analizado, que vimos que depende fuertemente de n y V.\\
+Entonces.. cuál serían los casos en donde programación dinámica sea mejor que Backtracking? Bueno por un lado ya sabemos que cualquier instancia en donde los elementos de C son de mucho menor orden que V, Bactracking se comporta exponencialmente, como un algoritmo de fuerza bruta. En esos casos ya sabemos que lo mejor es programación dinámica. Pero existirán otros casos donde Backtracking se beneficie por las podas y aún así los algoritmos de programación dinámica son mejores?\\
+Es evidente que necesitamos instancias donde n x V no sea demasiado grande, y donde las podas de Bactracking funcionen, porque ya sabemos que sino es exponencial y es trivial que algún algoritmo de programación dinámica es mejor. Analicemos casos en donde n sea suficientemente representativo, y analicemos fijando diferentes V chicos y los elementos de C en orden de V. Esperamos que V chicos y elementos de C en ese orden favorezca las podas de Backtracking y que el tamaño grande de C y los elementos que estén $"$alejados$"$ de V lo penalicen y ahí sacar la ventaja con los algoritmos de programación dinámica.
+\end{verse}
+\includegraphics[scale=.6]{backvspd.png}
+\begin{verse}
+Es interesante ver la influencia del crecimiento de V para que la diferencia de performance empiece a igualarse y posteriormente a invertirse. Todavía más interesate si se mira con los anteriores gráficos, que se ve exactamente lo opuesto porque queríamos ver lo opuesto y que los dos grupos pueden verse como uno solo, en donde las diferentes etapas por las cuales los algoritmos se benefician o perjudican se hacen muy evidentes.\\
+\end{verse}
+%\begin{center}
+%\includegraphics[scale=.8]{tdvsbu_lin.png}
+%\end{center}
+
+%\begin{center}
+%\includegraphics[scale=.4]{wc_bt_vs_bu_graph.png}\end{center}
 %La explicación es simple: en estos casos particulares, backtracking actúa casi como un algoritmo lineal, porque son tantos los casos que evita calcular que es como si solo recorriera una vez a C, mientras que bottom up cada vez que V crece necesita matrices más grandes que recorrer.
 
-\subsection{Experimento 2}
-Ahora la cuestión es ver si existen instancias para las cuales convenga utilizar top-down en lugar de bottom up o backtracking. Para sacar ventaja frente a Bottom up necesitamos que n $\cdot$ V sea grande.
-Para lo siguiente construimos intanicias incrementando n y V simultaneamente, y los elementos de C generamos aleatoriamente de forma uniforme acotados por V.\\
-En el siguiente mapa de calor podemos ver de forma separada como es la relación de los tiempos de ejecución de cada algoritmo en función del tamaño de C y del valor objetivo. Como primer detalle vemos que las escalas de tiempo son diferentes: el top-down tiene gran parte de sus promedios de tiempos en los 5 segundos mientras que para el mismo tipo de instancias bottom up tiene promedios de 15. Por otro lado, vemos que en el bottom up los tiempos están más en función de n y V, es decir, es un algoritmo estable pero que se ve afectado por los tiempos que consume moverse en una matriz cada vez mas grande, a diferencia de top down. Este parece centraliza sus tiempos más grandes en una franja intermedia de los V. Por lo que venimos analizando, esto podría relacionarse con "peores" peores casos que al computarlos genera estas oscilaciones que venimos viendo, de modo que el top down ante casos en donde resuelve pocos subproblemas no se ve afectado por el n $\cdot$ V.
-\begin{center}
-\includegraphics[scale=.4]{heatmap_td_vs_bu.png}
-\end{center}
+%\subsection{Experimento 2}
+%Ahora la cuestión es ver si existen instancias para las cuales convenga utilizar top-down en lugar de bottom up o backtracking. Para sacar ventaja frente a Bottom up necesitamos que n $\cdot$ V sea grande.
+%Para lo siguiente construimos intanicias incrementando n y V simultaneamente, y los elementos de C generamos aleatoriamente de forma uniforme acotados por V.\\
+%En el siguiente mapa de calor podemos ver de forma separada como es la relación de los tiempos de ejecución de cada algoritmo en función del tamaño de C y del valor objetivo. Como primer detalle vemos que las escalas de tiempo son diferentes: el top-down tiene gran parte de sus promedios de tiempos en los 5 segundos mientras que para el mismo tipo de instancias bottom up tiene promedios de 15. Por otro lado, vemos que en el bottom up los tiempos están más en función de n y V, es decir, es un algoritmo estable pero que se ve afectado por los tiempos que consume moverse en una matriz cada vez mas grande, a diferencia de top down. Este parece centraliza sus tiempos más grandes en una franja intermedia de los V. Por lo que venimos analizando, esto podría relacionarse con "peores" peores casos que al computarlos genera estas oscilaciones que venimos viendo, de modo que el top down ante casos en donde resuelve pocos subproblemas no se ve afectado por el n $\cdot$ V.
+
 %Por último analicemos lo siguiente: Backtracking tiende a comportarse como lineal ante los casos en que V es de menor o igual orden que los elementos de C y bottom up demostró ser eficiente en ese tipo de instancias. La pregunta sería: si sabemos que estamos ante uno de estos contextos, cuál de los dos conviene?
 %A simple viste se diría que backtracking, porque si es casi lineal claramente mejor que n x V. Sin embargo en nuestros análisis vimos que en los algoritmos recursivos las llamadas recursivas no son gratis y esto puede afectar la performance.
 %\begin{center}
 %\includegraphics[scale=.4]{comp_bu_bt.png}
 %\end{center}
-\subsection{Experimento 3}
-En la simulación de diferentes situaciones de la vida cotidiana se pueden utilizar distribuciones normales la generación de determinadas instancias. Sería interesante entonces analizar situaciones en las que los elementos estén generados de esta forma.
-Analicemos la siguiente, fijemos n en 15,20,25, que nuestros experimentos arrojaron que eran valores razonables para probar simultáneamente los algoritmos: si los elementos de C siguen una distribución normal de media n, el valor objetivo lo hacemos incrementarse hasta $n^{3}$ y la varianza = $\frac{n^{2}}{V}$ inicialmente y después varianza = $\frac{V}{n}$. En el primer caso es una instancia en donde a medida que crece V, los elementos de C sufren una menor dispersión. Esto puede indicar que, en Backtracking mientras V no sea de un orden mucho mayor a n, como los elementos van a estar cerca de V las podas van a tener mucho trabajo y el algoritmo será eficiente. Por otro lado, si la dispersión se incrementa con V, Backtracking va a empeorar su performance debido a su reducción en el uso de las podas.\\
+
+
+%\subsection{Experimento 3}
+%En la simulación de diferentes situaciones de la vida cotidiana se pueden utilizar distribuciones normales la generación de determinadas instancias. Sería interesante entonces analizar situaciones en las que los elementos estén generados de esta forma.
+%Analicemos la siguiente, fijemos n en 15,20,25, que nuestros experimentos arrojaron que eran valores razonables para probar simultáneamente los algoritmos: si los elementos de C siguen una distribución normal de media n, el valor objetivo lo hacemos incrementarse hasta $n^{3}$ y la varianza = $\frac{n^{2}}{V}$ inicialmente y después varianza = $\frac{V}{n}$. En el primer caso es una instancia en donde a medida que crece V, los elementos de C sufren una menor dispersión. Esto puede indicar que, en Backtracking mientras V no sea de un orden mucho mayor a n, como los elementos van a estar cerca de V las podas van a tener mucho trabajo y el algoritmo será eficiente. Por otro lado, si la dispersión se incrementa con V, Backtracking va a empeorar su performance debido a su reducción en el uso de las podas.\\
 %En el caso de Fuerza Bruta no se esperan cambios, dado que no importa la situación siempre hará lo mismo. Para Top-Down y Bottom Up, no se esperan grandes beneficios, de hecho para Top-Down es posible que cuando la dispersión sea alta se le generen lamadas recursivas muy pesadas y (por la alta densidad de los elementos) y empeore su performance.\\
-Se presentan los mapas de calor en función de V y n. En la parte superior están los gráficos cuando la dispersión disminuye cuando aumenta V.
-\begin{center}
-\includegraphics[scale=.4]{comp_distr_normal.png}
+%Se presentan los mapas de calor en función de V y n. En la parte superior están los gráficos cuando la dispersión disminuye cuando aumenta V.
+%\begin{center}
+%\includegraphics[scale=.4]{comp_distr_normal.png}
 %\includegraphics[scale=.5]{comp_distr_normal_2.png}
-\end{center}
+%\end{center}
 \end{verse}
-Finalmente las ideas principales se puede apreciar que para Fuerza Bruta no hay cambios debido a que en cualquier caso realiza todos los subproblemas. Por otro lado Top-Down empeora considerablemente cuando la dispersión aumenta, aunque sorprende su alta eficiencia cuando es baja la dispersión. Lo que pasa es que no habíamos notado que Top-Down almacenará los resultados de los subproblemas y si esos subproblemas son muy parecidos (baja dispersión de los elementos) entonces se beneficiará mucho de esto, y esto evidentemente no se dará con una alta dispersión. \\
-Respecto de Backtracking hubo ciertas diferencias. Posiblemente se deba a que el hecho de que haya o no dispersión lo afecta en tanto y cuanto los elementos no se alejen mucho de V, porque en ese caso casi que actuará con un Fuerza Bruta. Como nota: marcas rojas indican que por temás de tiempo de procesamiento no se llegaron a completar.
+%Finalmente las ideas principales se puede apreciar que para Fuerza Bruta no hay cambios debido a que en cualquier caso realiza todos los subproblemas. Por otro lado Top-Down empeora considerablemente cuando la dispersión aumenta, aunque sorprende su alta eficiencia cuando es baja la dispersión. Lo que pasa es que no habíamos notado que Top-Down almacenará los resultados de los subproblemas y si esos subproblemas son muy parecidos (baja dispersión de los elementos) entonces se beneficiará mucho de esto, y esto evidentemente no se dará con una alta dispersión. \\
+%Respecto de Backtracking hubo ciertas diferencias. Posiblemente se deba a que el hecho de que haya o no dispersión lo afecta en tanto y cuanto los elementos no se alejen mucho de V, porque en ese caso casi que actuará con un Fuerza Bruta. Como nota: marcas rojas indican que por temás de tiempo de procesamiento no se llegaron a completar.
 
 \section{Conclusiones}
 
 \begin{verse}
-%Durante la presentación de este trabajo se presentaron diferentes técnicas algorítmicas para hallar las soluciones del conocido problema {\it suma de subconjunos}. Cada una de estás técnicas responden a diferentes formas de abordar el problema para llegar a una solución. Inicialmente se hizo un análisis de la literatura del problema, mencionando diferentes algoritmos y sus objetivos principales. Posteriormente se escribieron cuatro diferentes algoritmos y desde ese momento se podían plantear interrogantes o afirmaciones acerca de qué tipo de situaciones o contextos podrían beneficiarlos. Finalmente se realizaron experimentos que permitieron conocer un poco más en profundidad los puntos débiles y fuertes de las soluciones, así como también adquirir la información suficiente a la hora de tomar decisiones de cuál de ellos experimentar en función del contexto, los recursos disponibles o las necesidades. \\
-Los algoritmos que utilicen fuerza bruta quedan relegados para situaciones muy singulares, con tamaños de C muy pequeños, y su ventaja responde a la facilidad con la que se puede diseñar. Una mucho mejor opción se vio que era el Backtracking, no solo porque también es relativamente sencillo de diseñar sino porque permite ser útil en mayor variedad de situaciones. Vimos que si bien ante casos de C muy grandes padecía lo mismo que Fuerza Bruta, hay casos en lo que esto no pasa. Estos casos son cuando el orden de gran parte de los elementos de C supera al de V, porque vimos que el comportamiento en estas situaciones era casi lineal debido a la cantidad de combinaciones de soluciones que se salteaba.\\ 
-Desde otro punto de la programación encontramos a Top-Down y Bottom up. La realidad en la experimentación es que Top-Down no fue tan beneficiado por los números, Bottom up demostró ser muy rápido para grandes muestras de tamaños de n y V, incluso los razonablemente grandes, y había que incrementarlos mucho para empezar a notar una deficiencia a base de los movimientos que debe hacer por la matriz. Incluso, en los mejores casos de Backtracking quedó ciertamente relegado para este tipo de casos, dado que al aumentar mucho n y V comenzaba a incrementar los tiempos, mientras que Backtracking al no tener este problema supo sacar las ventajas. \\
-También es necesario mencionar que las facilidades para diseñar Bottom Up son propias de este problema y en otros podría ser realmente difícil, lo cual sumaría ventaja a Top-Down que es muy sencillo.\\
-Como líneas finales queda resaltar la variedad con la que se puede intentar hacer frente a un problema, y lo importante de los análisis y experimentos que pueden trazar una ayuda acerca de los mejor pasos a seguir en situaciones determinadas. 
-
+Durante la presentación de este trabajo se presentaron diferentes técnicas algorítmicas para hallar las soluciones del conocido problema {\it suma de subconjuntos}. Cada una de estás técnicas responden a diferentes formas de abordar el problema para llegar a una solución exacta y particularmente en nuestro caso la mejor. Inicialmente se hizo un análisis de la literatura del problema, mencionando diferentes algoritmos y sus objetivos principales. Posteriormente se escribieron cuatro diferentes algoritmos y desde ese momento se plantearon interrogantes acerca de qué tipo de situaciones o contextos podrían beneficiarlos. Finalmente se realizaron experimentos que permitieron conocer un poco más en profundidad los puntos débiles y fuertes de las soluciones, así como también adquirir la información suficiente a la hora de tomar decisiones de cuál de ellos experimentar en función del contexto, los recursos disponibles o las necesidades. \\
+Los algoritmos que utilicen fuerza bruta quedan relegados para situaciones muy singulares, con tamaños de C muy pequeños, y su ventaja responde a la facilidad con la que se puede diseñar. Por el lado de Backtracking se puede encontraron situaciones en donde sería interesante aplicarlo. Estas se pueden englobar en las que los elementos de C son muy grandes respecto de V, y si V llegara a ser grande incluso vimos que le ganaría a los algoritmos de programación dinámica.
+\\
+Desde otro punto de las metodologías encontramos a Top-Down y Bottom up. Top Down fue un poco más rápido y también como era previsible, la performance de Bottom Up era directamente proporcional a los tamaños de n y V, y cuando estos eran muy grandes Top Down también lo padecía pero, como se vio en los mapas de calor, para muchas instancias al resolver sólo los subproblemas necesarios mejoraba mucho la performance respecto de Bottom Up. Este tipo de algoritmos son los mejores para resolver este problema cuando no se cumplen ciertas requerimientos como para aplicar Backtracking, porque no hay que olvidar que si C llegara a ser grande, con que una parte chica de los elementos no cumpla lo necesario, Backtracking ya es un algoritmo exponencial. Es decir, para utilizar esta técnica es necesario tener muy bien definido cómo serán V, |C| y los elementos de C para usarla. \\
 \end{verse}
 
 \section{Referencias}
@@ -627,5 +483,18 @@ $[6]$G. J. Woeginger, Exact Algorithms for NP-Hard Problems: A Survey, Lecture N
 $[7]$Computing partitions with applications to the knapsack problem,  Journal of the Association for Computing Machinery\\
 $[8]$Donald Knuth. \it{The Art Of Computer Programming : Fundamentals Algorithms}
 \end{verse}
+\section{Cambios}
+\begin{enumerate}
+\item Agregadas algunas cosas en la introducción.
+\item La sección de Fuerza Bruta permaneció sin cambios.
+\item Toda la sección de Backtracking fue modificada. Particularmente pseudocódigo, código fuente, justificación de complejidad, acorde a los cambios necesarios para llegar a la pedida. 
+\item Se sacó el código fuente y se agrandaron los gráficos.
+\item Agregados experimentos con escala logarítmica.
+\item Modificadas algunas explicaciones de programación dinámica de complejidad. En Top-Down particularmente se modificó pseudocódigo y código fuente.
+\item Modificados y agregados gran parte de los experimentos, para rehacerlos por las modificaciones de algunos algoritmos y en otros casos para agregar casos.
+\item Agregados títulos ilustrativos en los experimentos.
+\item Modificada las conclusiones a partir de los nuevos experimentos.
+\item Se hace la entrega con las instancias que se usaron para testear y para experimentar.
+\end{enumerate}
 
 \end{document}

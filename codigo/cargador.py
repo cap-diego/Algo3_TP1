@@ -2,64 +2,69 @@ import numpy as np
 import random
 
 
-def test_bc_3_1():
-    file = open("test/input_wc_10.txt","w")
-    cantElemMax = 28
-    cantElem = 2
+def test_peorcaso_var_n():
+    file = open("test/test_peor_caso_variando_n_v1000.txt","w")
+    cantElemMax = 140
+    cantElem = 0
     i = cantElem
     while i <= cantElemMax:
-        valorObjetivo = np.random.randint(i, i**2)
+        valorObjetivo = 1000
+        #valorObjetivo = np.random.randint(0,1+i**2)
         file.write(str(i) + " " + str(valorObjetivo) + "\n")
         #file.write(str(valorObjetivo) + "\n")
         for j in range(0,i):
-            if(i==cantElemMax and (j==i-1)):
-                file.write(str(np.random.randint(0,i)))
+            val = np.random.randint(0,valorObjetivo)
+            if((j==cantElemMax-1)):
+                #file.write(str(np.random.randint(0,i)))
+                file.write(str(val))
             else:
-                file.write(str(np.random.randint(0,i)) + "\n")
-        i+=5
+                file.write(str(val)+"\n")
+                #file.write(str(np.random.randint(0,i)) + "\n")
+        i+=2
     file.close()
 
-
-def test_wc_2():
-    file=open("test/input_wc_2_2.txt","w")
-    cantElem = 26
-    valorObjetivo = cantElem
-    file.write(str(cantElem) + " " + str(valorObjetivo) + "\n")
-    for j in range(0,2):
-        for k in range(0,cantElem):
-            if(j==1 and k==cantElem-1):
-                file.write(str(valorObjetivo))
-            else:
-                if(j==0 and 0==k):
-                    file.write(str(0) + "\n")
+def test_peorcaso_var_ambos():
+    file = open("test/test_peor_caso_variando_ambos.txt","w")
+    cantElemMax = 60
+    cantElem = 5
+    i = cantElem
+    while i <= cantElemMax:
+        vo = 0
+        while vo<=50000:
+            file.write(str(i) + " " + str(vo) + "\n")
+            #file.write(str(valorObjetivo) + "\n")
+            for j in range(0,i):
+                val = np.random.randint(0,i)
+                if(vo==50000 and (j==i-1) and i==cantElemMax):
+                    file.write(str(val))
+                    #file.write(str(np.random.randint(0,i**2)))
                 else:
-                    file.write(str(np.random.randint(0,cantElem)) + "\n")
-
-def test_wc_3():
-    file = open("test/input_wc_14.txt","w")
-    n = 20
-    while n<=20:
-        v=n
-        while v<=n**3:
-            file.write(str(n) + " " + str(v) + "\n")
-            valor = np.random.normal(loc=v,scale=v/n**3,size=n)
-            for i in range(0,n):
-                file.write(str(int(abs(valor[i])))+ "\n")
-            v+=100
-        n+=5
-
-def test_wc_2_2():
-    file = open("test/input_wc_2_2.txt","w")
-    n = 50
-    vo = n
-    while vo <= n**2:
-        file.write(str(n) + " " + str(vo) + "\n")
-        for j in range(0, n):
-            file.write(str(np.random.randint(n,n**2)) + "\n")
-        vo+=n
+                    file.write(str(val) + "\n")
+                    #file.write(str(np.random.randint(0,i**2)) + "\n")
+            vo+=1000
+        i+=3
 
     file.close()
+
+
+def test_peorcaso_var_v():
+        file = open("test/test_peor_caso_variando_v_n15.txt","w")
+        cantElem = 25
+        vo = 100
+        while vo <= 50000:
+            file.write(str(cantElem) + " " + str(vo) +"\n")
+            val=np.random.randint(0,cantElem)
+            for j in range(0,cantElem):
+                if(vo==50000 and (j==cantElem-1)):
+                    file.write(str(val))
+                    #file.write(str(np.random.randint(0,cantElem)))
+                else:
+                    file.write(str(val) + "\n")
+                    #file.write(str(np.random.randint(0,cantElem)) + "\n")
+            vo+=1000
+        file.close()
 
 def main():
-    test_wc_3()
+    print("Generado correctamente")
+    test_peorcaso_var_ambos()
 main()

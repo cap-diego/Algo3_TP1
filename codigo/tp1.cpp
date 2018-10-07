@@ -2,19 +2,19 @@
 #include <vector>
 #include <algorithm>
 #include <fstream>
-#include <cstring>
+#include <unistd.h>
 #include <cmath>
 #include <chrono>
 using namespace std;
 
 int buscarValorObjetivoPD_bottom_up( long long int &valorObjetivo, vector<int> &conj, int& sol, long long int &pasos);
 int buscarValorObjetivoPD_top_down(vector<int>,  long long int, int& sol, long long int &pasos);
-int aux_top_down(vector<int> conjActual, long long int valorObjetivo, int tamInicial, vector<vector<int> > & memoria, int desde,long long int &pasos);
+int aux_top_down(vector<int> &conjActual, long long int valorObjetivo, int tamInicial, vector<vector<int> > & memoria, int desde,long long int &pasos);
 int bruteforce(vector<int>& c, long long int valorObjetivo, int& sol,long long int &pasos);
-int backtracking(vector<int> c, long long int valorObjetivo, int& sol,long long int &pasos);
-void auxBacktracking(vector<int>& c, int desde, long long int valorObjetivo, int& sol, long long int sumaActual, long long int cantElem,long long int &pasos);
+int backtracking(vector<int> &c, long long int valorObjetivo, int& sol,long long int &pasos);
+int auxBacktracking(vector<int>& c, int desde, long long int valorObjetivo, int& sol, long long int sumaActual, long long int cantElem,long long int &pasos);
 
-
+//PROCEDIMIENTO PARA MEDIR LOS TIEMPOS DE EJECUCION TOMADOS DE UNA CLASE DE LABORATORIO
 #define medir_tiempo(K, CODIGO) \
     [&] () -> double {\
         double tiempo_promedio = 0.0;\
@@ -28,7 +28,6 @@ void auxBacktracking(vector<int>& c, int desde, long long int valorObjetivo, int
         return tiempo_promedio / (double)K;\
     }();
 
-
 int main(int argc, char** argv) {
 
     using namespace chrono;
@@ -36,11 +35,11 @@ int main(int argc, char** argv) {
     ifstream inFile;
     vector<int> c;
     long long int valorObjetivo, cantElem;
-    int cantRep = 2;
+    int cantRep = 1;
     ////INICIO CARGA DATOS
     string nombreIn, nombreOut;
     //cout << argv[1];
-    if(argc == 1  ) { //significa que la entrada es por teclado
+    if(argc != 1 ) { //significa que la entrada es por teclado (lo negue para probar cosas)
         cin >>cantElem>>valorObjetivo;
         c.resize(cantElem);
         for (int i = 0; i < cantElem; ++i) {
@@ -50,36 +49,45 @@ int main(int argc, char** argv) {
         long long int pbf=0,pbt=0,ppd1=0,ppd2=0;
         auto tbf = medir_tiempo(cantRep,bruteforce(c,valorObjetivo,sbf,pbf););
         auto tbt = medir_tiempo(cantRep, backtracking(c,valorObjetivo,sbt,pbt););
+        cout <<"pasos bt: "<<pbt<<endl;
         auto tpd1 = medir_tiempo(cantRep, buscarValorObjetivoPD_top_down(c,valorObjetivo,spd1,ppd1););
         auto tpd2 = medir_tiempo(cantRep, buscarValorObjetivoPD_bottom_up(valorObjetivo,c,spd2,ppd2););
         //cout <<"resultados: "<<sbf<<" "<<sbt<<" "<<spd1<<" "<<spd2<<endl;
         cout<<sbf<<endl;
         outFile<<cantElem<<","<<tbf<< ","<<tbt<<","<<tpd1<<","<<tpd2<<","<<spd1<<","<<valorObjetivo<<","<<pbf<<","<<pbt<<","<<ppd1<<","<<ppd2<<endl;
-    }else if(strcmp(argv[1], "")!=0){
-        inFile.open(argv[1]);
-        outFile.open("OUT.csv");//,ios_base::app);
+    }//else if(strcmp(argv[1], "")!=0){
+    else{
+        //inFile.open("../test/test_peor_caso_variando_ambos.txt",ios::in);
+        inFile.open("../casos_de_prueba/c12.txt",ios::in);
+        //outFile.open("../test/outwc_variando_ambos2.csv");//,ios_base::app);
         if(!inFile.is_open()) return 1;
         outFile<<"TAM"<<","<<"T-FUERZA-BRUTA"<<","<<"T-BACKTRACKING"<<","<<"T-TOP-DOWN"<<","<<"T-BOTTOM-UP"<<","<< "SOLUCION"<<","<<"V"<<","<<"Pasos-BF"<<","<<"Pasos-BT"<<","<<"Pasos-TD"<<","<<"Pasos-BU"<<endl;
         while (!inFile.eof()){
             c.clear();
             inFile >>cantElem >> valorObjetivo;
             if(!inFile.eof()){
-              //cout <<cantElem<<" "<<valorObjetivo<<endl;
+              cout <<cantElem<<" "<<valorObjetivo<<endl;
               c.resize(cantElem);
               for (int j = 0; j < cantElem; ++j) {
                   inFile >> c[j];
-                  //cout << c[j]<< " ";
               }
-              int sbf,sbt,spd1,spd2;
-              long long int pbf=0,pbt=0,ppd1=0,ppd2=0;
+
+              int sbf=-1,sbt=-1,spd1=-1,spd2=-1;
+                cantRep=4;
+              long long int pbf=0,pbt=0,ppd1=0,ppd2=0,tbt2=0;
               auto tbf = medir_tiempo(cantRep,bruteforce(c,valorObjetivo,sbf,pbf););
               auto tbt = medir_tiempo(cantRep, backtracking(c,valorObjetivo,sbt,pbt););
-              auto tpd1 = medir_tiempo(cantRep, buscarValorObjetivoPD_top_down(c,valorObjetivo,spd1,ppd1););
-              auto tpd2 = medir_tiempo(cantRep, buscarValorObjetivoPD_bottom_up(valorObjetivo,c,spd2,ppd2););
-              cout<<sbf<<endl;
-              //cout <<"resultados: "<<sbf<<" "<<sbt<<" "<<spd1<<" "<<spd2<<endl;
+                auto tpd1 = medir_tiempo(cantRep, buscarValorObjetivoPD_top_down(c,valorObjetivo,spd1,ppd1););
+                auto tpd2 = medir_tiempo(cantRep, buscarValorObjetivoPD_bottom_up(valorObjetivo,c,spd2,ppd2););
+                cout <<"pasos bt: "<<pbt<<endl;
+                cout <<"pasos bf "<<pbf<<endl;
+              cout <<"resultados: "<<sbf<<" "<<sbt<<" "<<spd1<<" "<<spd2<<endl;
               outFile<<cantElem<<","<<tbf<< ","<<tbt<<","<<tpd1<<","<<tpd2<<","<<spd1<<","<<valorObjetivo<<","<<pbf<<","<<pbt<<","<<ppd1<<","<<ppd2<<endl;
-              //cout<<spd1<<"\t"<<tbf<<"\t"<<tbt<<"\t"<<tpd1<<"\t"<<tpd2<<endl;
+              cout<<"tiempos: "<<tbf<<"\t"<<tbt<<"\t"<<tpd1<<"\t"<<tpd2<<endl;
+              if(!(sbf == sbt && sbf == spd1 && spd2 == spd1)) {
+                  //cout<<"ERRORRRRR"<<endl;
+                  //return 1;
+              }
             }
 
         }
@@ -95,55 +103,60 @@ int main(int argc, char** argv) {
 
 
 
-void auxBacktracking(vector<int>& c, int desde,  long long int valorObjetivo, int& sol, long long int sumaActual,  long long int cantElem,long long int &pasos){
-    if(sol==-1 || (sol != -1 && cantElem < sol)){
-        if(cantElem > 0) {
-            if(sumaActual == valorObjetivo) {
-                if(sol==-1){
-                    sol = cantElem;
-                }
-                else {
-                    if(sol > cantElem) {
-                        sol = cantElem;
-                    }
-                }
-            }
-        }
+int auxBacktracking(vector<int>& c, int desde,  long long int valorObjetivo, int& sol, long long int sumaActual,  long long int cantElem,long long int &pasos){
+    pasos++;
+    if(sumaActual > valorObjetivo) return c.size()+1;//poda factibilidad
+    if(sol!=-1 && cantElem>=sol) return c.size()+1;//poda por optimalidad
+    if(sumaActual == valorObjetivo) {//ya encontre la sol mas optima de esta rama
+        sol = cantElem;
+        return 0;
     }
-    for (int i = desde; i < c.size() && sumaActual < valorObjetivo; ++i) {
-        pasos++;
-        if( sol==-1 || sol!=-1 && sol > cantElem) {//cota por fact y optº
-
-            desde++;
-            sumaActual +=c[i];
-            cantElem++;
-            auxBacktracking(c,desde,valorObjetivo,sol,sumaActual, cantElem,pasos);
-            cantElem--;
-            sumaActual -=  c[i];
-        }
+    if(desde<c.size()) {
+        if(c[desde] +sumaActual>valorObjetivo)
+            return c.size()+1;//poda por fact
+        return min(auxBacktracking(c,desde+1,valorObjetivo,sol,sumaActual,cantElem,pasos), 1+auxBacktracking(c,desde+1,valorObjetivo,sol,sumaActual+c[desde],cantElem+1,pasos));//paso recursivo
     }
 }
 
 
-int backtracking(vector<int> c,  long long int valorObjetivo, int& sol,long long int &pasos) {
+
+int backtracking(vector<int> &c,  long long int valorObjetivo, int& sol,long long int &pasos) {
     sol=-1;
-    if (valorObjetivo==0) {
-      sol=0;
-      return 0;
+    if(c.size() == 0){
+        if(valorObjetivo == 0) {
+            sol = 0;
+            return 0;
+        }else {
+            sol = -1;
+            return -1;
+        }
+
+    }else if(valorObjetivo == 0) {
+        sol = -1;
+        return -1;
     }
     sort(c.begin(),c.end()); //ordenamos de menor a mayor en aprox segun c++ (log |c| * |c|)
-    auxBacktracking(c,0,valorObjetivo,sol,0,0,pasos);
-    if(sol==-1 || sol > c.size()) {
+    int s=auxBacktracking(c,0,valorObjetivo,sol,0,0,pasos);
+    if(s ==-1 || s > c.size()) {
         return -1;
     }else{
-        return sol;
+        return s;
     }
 }
 
 int bruteforce(vector<int>& c,  long long int valorObjetivo,int &sol,long long int &pasos){
-    if(valorObjetivo == 0) {
-      sol=0;
-      return 0;
+    if(c.size() == 0){
+        if(valorObjetivo == 0) {
+            sol = 0;
+            return 0;
+        }else {
+            sol = -1;
+            return -1;
+        }
+
+    }else if(valorObjetivo == 0) {
+        sol = -1;
+        return -1;
     }
     int n = c.size();
     long long int total = pow(2,n);
@@ -185,8 +198,8 @@ int buscarValorObjetivoPD_bottom_up( long long int &valorObjetivo, vector<int> &
         }
 
     }else if(valorObjetivo == 0) {
-        sol = 0;
-        return 0;
+        sol = -1;
+        return -1;
     }
     vector<vector<int> > soluciones;
     soluciones.resize(conj.size()+1);
@@ -199,7 +212,7 @@ int buscarValorObjetivoPD_bottom_up( long long int &valorObjetivo, vector<int> &
     c[c.size()-1] = c[0];
     c[0] = aux;
     for (int j = 0; j < valorObjetivo+1; ++j) {
-        soluciones[0][j]=c.size();
+        soluciones[0][j]=c.size()+1;
     }
     soluciones[0][0]=0;
     for (int i = 1; i < c.size(); i++) {
@@ -230,8 +243,8 @@ int buscarValorObjetivoPD_top_down(vector<int> conj,  long long int valorObjetiv
             return -1;
         }
     }else if(valorObjetivo == 0) {
-        sol=0;
-        return 0;
+        sol=-1;
+        return -1;
     }
     vector<vector<int> > soluciones(conj.size(),vector<int>((valorObjetivo+1),-1)); //inicializo matriz n x V con -1
     soluciones[0][0]=0;
@@ -240,7 +253,7 @@ int buscarValorObjetivoPD_top_down(vector<int> conj,  long long int valorObjetiv
     return sol;
 }
 
-int aux_top_down(vector<int> conjActual,  long long int valorObjetivo, int tamInicial, vector<vector<int> > & memoria, int desde,long long int &pasos) {
+int aux_top_down(vector<int> &conjActual,  long long int valorObjetivo, int tamInicial, vector<vector<int> > & memoria, int desde,long long int &pasos) {
     pasos++;
     if(desde < 0) {
         if(valorObjetivo==0) {
