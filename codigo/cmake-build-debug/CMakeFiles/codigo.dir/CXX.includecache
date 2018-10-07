@@ -17,6 +17,8 @@ fstream
 -
 unistd.h
 -
+string.h
+-
 cmath
 -
 chrono

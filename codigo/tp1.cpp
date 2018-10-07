@@ -33,71 +33,72 @@ int main(int argc, char** argv) {
 
     using namespace chrono;
     ofstream outFile;
-    outFile.open("outarch.csv");
+    outFile.open("outarch.csv");//archivo salida
     ifstream inFile;
     vector<int> c;
     long long int valorObjetivo, cantElem;
     int cantRep = 4;
     ////INICIO CARGA DATOS
-    //cout << argv[1];
     if(argc == 1 ) {
-        outFile<<"TAM"<<","<<"T-FUERZA-BRUTA"<<","<<"T-BACKTRACKING"<<","<<"T-TOP-DOWN"<<","<<"T-BOTTOM-UP"<<","<< "SOLUCION"<<","<<"V"<<","<<"Pasos-BF"<<","<<"Pasos-BT"<<","<<"Pasos-TD"<<","<<"Pasos-BU"<<endl;
-        cin >>cantElem>>valorObjetivo;
+        outFile << "TAM" << "," << "T-FUERZA-BRUTA" << "," << "T-BACKTRACKING" << "," << "T-TOP-DOWN" << ","
+                << "T-BOTTOM-UP" << "," << "SOLUCION" << "," << "V" << "," << "Pasos-BF" << "," << "Pasos-BT" << ","
+                << "Pasos-TD" << "," << "Pasos-BU" << endl;
+        cin >> cantElem >> valorObjetivo;
         c.resize(cantElem);
         for (int i = 0; i < cantElem; ++i) {
             cin >> c[i];
         }
-        int sbf=-1,sbt=-1,spd1=-1,spd2=-1;
-        long long int pbf=0,pbt=0,ppd1=0,ppd2=0;
-        auto tbf = medir_tiempo(cantRep,bruteforce(c,valorObjetivo,sbf,pbf););
-        auto tbt = medir_tiempo(cantRep, backtracking(c,valorObjetivo,sbt,pbt););
-        auto tpd1 = medir_tiempo(cantRep, buscarValorObjetivoPD_top_down(c,valorObjetivo,spd1,ppd1););
-        auto tpd2 = medir_tiempo(cantRep, buscarValorObjetivoPD_bottom_up(valorObjetivo,c,spd2,ppd2););
-        cout <<"resultados: "<<sbf<<" "<<sbt<<" "<<spd1<<" "<<spd2<<endl;
-        cout<<"tiempos: "<<tbf<<"\t"<<tbt<<"\t"<<tpd1<<"\t"<<tpd2<<endl;
-        outFile<<cantElem<<","<<tbf<< ","<<tbt<<","<<tpd1<<","<<tpd2<<","<<spd1<<","<<valorObjetivo<<","<<pbf<<","<<pbt<<","<<ppd1<<","<<ppd2<<endl;
-        if(!(sbf == sbt && sbf == spd1 && spd2 == spd1)) {
-            cout<<"ERROR"<<endl;
+        int sbf = -1, sbt = -1, spd1 = -1, spd2 = -1;
+        long long int pbf = 0, pbt = 0, ppd1 = 0, ppd2 = 0;
+        auto tbf = medir_tiempo(cantRep, bruteforce(c, valorObjetivo, sbf, pbf););
+        auto tbt = medir_tiempo(cantRep, backtracking(c, valorObjetivo, sbt, pbt););
+        auto tpd1 = medir_tiempo(cantRep, buscarValorObjetivoPD_top_down(c, valorObjetivo, spd1, ppd1););
+        auto tpd2 = medir_tiempo(cantRep, buscarValorObjetivoPD_bottom_up(valorObjetivo, c, spd2, ppd2););
+        cout << "resultados: " << sbf << " " << sbt << " " << spd1 << " " << spd2 << endl;
+        cout << "tiempos: " << tbf << "\t" << tbt << "\t" << tpd1 << "\t" << tpd2 << endl;
+        outFile << cantElem << "," << tbf << "," << tbt << "," << tpd1 << "," << tpd2 << "," << spd1 << ","
+                << valorObjetivo << "," << pbf << "," << pbt << "," << ppd1 << "," << ppd2 << endl;
+        if (!(sbf == sbt && sbf == spd1 && spd2 == spd1)) {
+            cout << "ERROR" << endl;
             return 1;
         }
-    }//else if(strcmp(argv[1], "")!=0){
-    else if(strcmp(argv[1],"")!=0){
-        inFile.open(argv[1]);
-        if(!inFile.is_open()) return 1;
-        outFile<<"TAM"<<","<<"T-FUERZA-BRUTA"<<","<<"T-BACKTRACKING"<<","<<"T-TOP-DOWN"<<","<<"T-BOTTOM-UP"<<","<< "SOLUCION"<<","<<"V"<<","<<"Pasos-BF"<<","<<"Pasos-BT"<<","<<"Pasos-TD"<<","<<"Pasos-BU"<<endl;
-        while (!inFile.eof()){
-            c.clear();
-            inFile >>cantElem >> valorObjetivo;
-            if(!inFile.eof()){
-              cout <<cantElem<<" "<<valorObjetivo<<endl;
-              c.resize(cantElem);
-              for (int j = 0; j < cantElem; ++j) {
-                  inFile >> c[j];
-              }
+        } else if (strcmp(argv[1], "") != 0) {
+            inFile.open(argv[1]);
+            if (!inFile.is_open()) return 1;
+            outFile << "TAM" << "," << "T-FUERZA-BRUTA" << "," << "T-BACKTRACKING" << "," << "T-TOP-DOWN" << ","
+                    << "T-BOTTOM-UP" << "," << "SOLUCION" << "," << "V" << "," << "Pasos-BF" << "," << "Pasos-BT" << ","
+                    << "Pasos-TD" << "," << "Pasos-BU" << endl;
+            while (!inFile.eof()) {
+                c.clear();
+                inFile >> cantElem >> valorObjetivo;
+                if (!inFile.eof()) {
+                    cout << cantElem << " " << valorObjetivo << endl;
+                    c.resize(cantElem);
+                    for (int j = 0; j < cantElem; ++j) {
+                        inFile >> c[j];
+                    }
 
-              int sbf=-1,sbt=-1,spd1=-1,spd2=-1;
-                cantRep=4;
-              long long int pbf=0,pbt=0,ppd1=0,ppd2=0,tbt2=0;
-              auto tbf = medir_tiempo(cantRep,bruteforce(c,valorObjetivo,sbf,pbf););
-              auto tbt = medir_tiempo(cantRep, backtracking(c,valorObjetivo,sbt,pbt););
-                auto tpd1 = medir_tiempo(cantRep, buscarValorObjetivoPD_top_down(c,valorObjetivo,spd1,ppd1););
-                auto tpd2 = medir_tiempo(cantRep, buscarValorObjetivoPD_bottom_up(valorObjetivo,c,spd2,ppd2););
-              cout <<"resultados: "<<sbf<<" "<<sbt<<" "<<spd1<<" "<<spd2<<endl;
-              outFile<<cantElem<<","<<tbf<< ","<<tbt<<","<<tpd1<<","<<tpd2<<","<<spd1<<","<<valorObjetivo<<","<<pbf<<","<<pbt<<","<<ppd1<<","<<ppd2<<endl;
-              cout<<"tiempos: "<<tbf<<"\t"<<tbt<<"\t"<<tpd1<<"\t"<<tpd2<<endl;
-              if(!(sbf == sbt && sbf == spd1 && spd2 == spd1)) {
-                  cout<<"ERROR"<<endl;
-                  return 1;
-              }
+                    int sbf = -1, sbt = -1, spd1 = -1, spd2 = -1;
+                    cantRep = 4;
+                    long long int pbf = 0, pbt = 0, ppd1 = 0, ppd2 = 0, tbt2 = 0;
+                    auto tbf = medir_tiempo(cantRep, bruteforce(c, valorObjetivo, sbf, pbf););
+                    auto tbt = medir_tiempo(cantRep, backtracking(c, valorObjetivo, sbt, pbt););
+                    auto tpd1 = medir_tiempo(cantRep, buscarValorObjetivoPD_top_down(c, valorObjetivo, spd1, ppd1););
+                    auto tpd2 = medir_tiempo(cantRep, buscarValorObjetivoPD_bottom_up(valorObjetivo, c, spd2, ppd2););
+                    cout << "resultados: " << sbf << " " << sbt << " " << spd1 << " " << spd2 << endl;
+                    outFile << cantElem << "," << tbf << "," << tbt << "," << tpd1 << "," << tpd2 << "," << spd1 << ","
+                            << valorObjetivo << "," << pbf << "," << pbt << "," << ppd1 << "," << ppd2 << endl;
+                    cout << "tiempos: " << tbf << "\t" << tbt << "\t" << tpd1 << "\t" << tpd2 << endl;
+                    if (!(sbf == sbt && sbf == spd1 && spd2 == spd1)) {
+                        cout << "ERROR" << endl;
+                        return 1;
+                    }
+                }
+
             }
-
         }
-
         inFile.close();
         outFile.close();
-    }
-
-
 
     return 0;
 }
